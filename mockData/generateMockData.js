@@ -56,14 +56,11 @@ const getNameForAllEntries = (words, numberOfEntries) => {
   for (var i = 0; i <= numberOfEntries; i++) {
     let numberOfRandomWords = words.length;
     let numberOfWordsInName = getRandomInteger(1, 3)
-    let nameOfRoom = '';
+    let nameOfRoom = [];
     for (var j = 0; j < numberOfWordsInName; j++) {
-      if (j === numberOfWordsInName - 1) {
-        nameOfRoom += words[getRandomInteger(0, numberOfRandomWords)]
-      } else {
-      nameOfRoom += words[getRandomInteger(0, numberOfRandomWords)] + ' ';
-      }
+      nameOfRoom.push(words[getRandomInteger(0, numberOfRandomWords)])
     }
+    nameOfRoom = nameOfRoom.join(' ')
     allWords.push(nameOfRoom);
   }
   return allWords;
