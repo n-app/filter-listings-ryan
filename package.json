@@ -1,17 +1,35 @@
 {
-  "name": "",
-  "version": "",
+  "name": "filter-listings-ryan",
+  "version": "1.0.0",
   "description": "",
-  "author": "",
-  "license": "",
+  "author": "Ryan Tsuzaki",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n-app/filter-listings-ryan"
+  },
   "scripts": {
+    "dev": "webpack -d --watch",
+    "server-dev": "nodemon server/index.js"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "nodemon": "^1.17.5",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "webpack-cli": "^2.1.5"
   }
 }
