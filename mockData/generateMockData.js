@@ -1,11 +1,11 @@
 const getRandomInteger = (min, max) => {
-  return Math.floor(Math.random() * (max - min) ) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const getNumberForAllEntries = (min,max,numberOfEntries) => {
+const getNumberForAllEntries = (min, max, numberOfEntries) => {
   let allValues = [];
   for (var i = 0; i < numberOfEntries; i++) {
-    allValues.push(getRandomInteger(min,max))
+    allValues.push(getRandomInteger(min, max))
   }
   return allValues;
 }
@@ -54,16 +54,24 @@ loremIpsum = [
 const getNameForAllEntries = (words, numberOfEntries) => {
   let allWords = [];
   for (var i = 0; i <= numberOfEntries; i++) {
-    let numberOfWords = words.length;
-    let nameOfRoom = words[getRandomInteger(0,numberOfWords)] + ' ' + words[getRandomInteger(0,numberOfWords)];
+    let numberOfRandomWords = words.length;
+    let numberOfWordsInName = getRandomInteger(1, 3)
+    let nameOfRoom = '';
+    for (var j = 0; j < numberOfWordsInName; j++) {
+      if (j === numberOfWordsInName - 1) {
+        nameOfRoom += words[getRandomInteger(0, numberOfRandomWords)]
+      } else {
+      nameOfRoom += words[getRandomInteger(0, numberOfRandomWords)] + ' ';
+      }
+    }
     allWords.push(nameOfRoom);
   }
   return allWords;
 }
 
-let allRoomNames = getNameForAllEntries(loremIpsum,600);
-let allPrices = getNumberForAllEntries(50,750,600);
-let allNumberOfRooms = getNumberForAllEntries(1,7,600);
-let allRatings = [getNumberForAllEntries(1,5,600)];
-let allNumberOfReviews = [[getNumberForAllEntries(0,500,600)]];
+let allRoomNames = getNameForAllEntries(loremIpsum, 600);
+let allPrices = getNumberForAllEntries(50, 750, 600);
+let allNumberOfRooms = getNumberForAllEntries(1, 7, 600);
+let allRatings = getNumberForAllEntries(1, 5, 600);
+let allNumberOfReviews = getNumberForAllEntries(0, 500, 600);
 let allUrls = getRoomPicUrl(600);
