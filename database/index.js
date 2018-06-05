@@ -1,8 +1,24 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+const mysql = require('mysql');
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  // we're connected!
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  database: 'rooms'
 });
+
+connection.connect((err) => {
+  if(err) {
+    console.log('Error connecting to the database-->', err)
+    return;
+  }
+  console.log('Connection to database established')
+})
+
+const insertRecords = (sql, data) => {
+  connection.query(sql, [data]);
+}
+
+module.exports = {
+  connection,
+  insertRecords
+}
