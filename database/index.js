@@ -4,7 +4,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   database: 'rooms'
-});
+})
 
 connection.connect((err) => {
   if(err) {
@@ -14,11 +14,19 @@ connection.connect((err) => {
   console.log('Connection to database established')
 })
 
-const insertRecords = (sql, data) => {
-  connection.query(sql, [data]);
+const insertRecords = (data) => {
+  connection.query('INSERT INTO roomlist (roomname, price, numberOfBedrooms, rating, numberOfReviews, urlToImage) VALUES ?', [data]);
+}
+
+const getAllRecords = (sendCallback) => {
+  connection.query('SELECT * FROM roomlist', (err, result, fields) => {
+    if (err) console.log(err);
+    sendCallback(result);
+  });
 }
 
 module.exports = {
   connection,
-  insertRecords
+  insertRecords,
+  getAllRecords
 }

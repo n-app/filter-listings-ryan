@@ -6,7 +6,7 @@ const getRandomInteger = (min, max) => {
 
 const getNumberForAllEntries = (min, max, numberOfEntries) => {
   let allValues = [];
-  for (var i = 0; i < numberOfEntries; i++) {
+  for (let i = 0; i < numberOfEntries; i++) {
     allValues.push(getRandomInteger(min, max))
   }
   return allValues;
@@ -14,13 +14,13 @@ const getNumberForAllEntries = (min, max, numberOfEntries) => {
 
 const getRoomPicUrl = (numberOfEntries) => {
     let allUrls = [];
-    for (var i = 0; i < numberOfEntries; i++) {
+    for (let i = 0; i < numberOfEntries; i++) {
         allUrls.push('https://s3.us-east-2.amazonaws.com/airbnb-clone-pics/room-pic_' + i + '.jpg')
     }
     return allUrls;
 }
 
-loremIpsum = [
+const loremIpsum = [
   'lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur',
   'adipiscing', 'elit', 'curabitur', 'vel', 'hendrerit', 'libero',
   'eleifend', 'blandit', 'nunc', 'ornare', 'odio', 'ut',
@@ -55,11 +55,11 @@ loremIpsum = [
 
 const getNameForAllEntries = (words, numberOfEntries) => {
   let allWords = [];
-  for (var i = 0; i < numberOfEntries; i++) {
+  for (let i = 0; i < numberOfEntries; i++) {
     let numberOfRandomWords = words.length;
     let numberOfWordsInName = getRandomInteger(1, 3)
     let nameOfRoom = [];
-    for (var j = 0; j < numberOfWordsInName; j++) {
+    for (let j = 0; j < numberOfWordsInName; j++) {
       nameOfRoom.push(words[getRandomInteger(0, numberOfRandomWords)])
     }
     nameOfRoom = nameOfRoom.join(' ')
@@ -68,18 +68,18 @@ const getNameForAllEntries = (words, numberOfEntries) => {
   return allWords;
 }
 
-let allRoomNames = getNameForAllEntries(loremIpsum, 600);
-let allPrices = getNumberForAllEntries(50, 750, 600);
-let allNumberOfRooms = getNumberForAllEntries(1, 7, 600);
-let allRatings = getNumberForAllEntries(1, 5, 600);
-let allNumberOfReviews = getNumberForAllEntries(0, 500, 600);
-let allUrls = getRoomPicUrl(600);
+const allRoomNames = getNameForAllEntries(loremIpsum, 600);
+const allPrices = getNumberForAllEntries(50, 750, 600);
+const allNumberOfRooms = getNumberForAllEntries(1, 7, 600);
+const allRatings = getNumberForAllEntries(1, 5, 600);
+const allNumberOfReviews = getNumberForAllEntries(0, 500, 600);
+const allUrls = getRoomPicUrl(600);
 
-let columnData = [allRoomNames, allPrices, allNumberOfRooms, allRatings, allNumberOfReviews, allUrls]
+const columnData = [allRoomNames, allPrices, allNumberOfRooms, allRatings, allNumberOfReviews, allUrls]
 
-let createRecords = (columns) => {
+const createRecords = (columns) => {
   let records = [];
-  for (var i = 0; i < columns[0].length; i++) {
+  for (let i = 0; i < columns[0].length; i++) {
     let record = [];
     columns.forEach((column)=> {
       record.push(column[i])
@@ -89,7 +89,6 @@ let createRecords = (columns) => {
   return records;
 }
 
-let allRecords = createRecords(columnData);
+const allRecords = createRecords(columnData);
 
-let sql = 'INSERT INTO roomlist (roomname, price, numberOfBedrooms, rating, numberOfReviews, urlToImage) VALUES ?';
-db.insertRecords(sql, allRecords);
+db.insertRecords(allRecords);
