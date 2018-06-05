@@ -1,3 +1,5 @@
+const db = require('../database/index.js')
+
 const getRandomInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -53,7 +55,7 @@ loremIpsum = [
 
 const getNameForAllEntries = (words, numberOfEntries) => {
   let allWords = [];
-  for (var i = 0; i <= numberOfEntries; i++) {
+  for (var i = 0; i < numberOfEntries; i++) {
     let numberOfRandomWords = words.length;
     let numberOfWordsInName = getRandomInteger(1, 3)
     let nameOfRoom = [];
@@ -72,3 +74,22 @@ let allNumberOfRooms = getNumberForAllEntries(1, 7, 600);
 let allRatings = getNumberForAllEntries(1, 5, 600);
 let allNumberOfReviews = getNumberForAllEntries(0, 500, 600);
 let allUrls = getRoomPicUrl(600);
+
+let columnData = [allRoomNames, allPrices, allNumberOfRooms, allRatings, allNumberOfReviews, allUrls]
+
+let createRecords = (columns) => {
+  let records = [];
+  for (var i = 0; i < columns[0].length; i++) {
+    let record = [];
+    columns.forEach((column)=> {
+      record.push(column[i])
+    })
+    records.push(record)
+  }
+  return records;
+}
+
+let allRecords = createRecords(columnData);
+
+let sql = 'INSERT INTO roomlist (roomname, price, numberOfBedrooms, rating, numberOfReviews, urlToImage) VALUES ?';
+db.insertRecords(sql, allRecords);

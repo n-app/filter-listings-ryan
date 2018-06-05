@@ -17,7 +17,13 @@
 
 ## Usage
 
-> Some usage instructions
+> Run the below in terminal order to add table to database
+mysql.server start
+mysql -u root < schema.sql
+
+> Run the below in terminal in order to add mock data to database
+node generateMockData.js
+
 
 ## Requirements
 
