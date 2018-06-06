@@ -1,10 +1,15 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const db = require('../database/index.js');
+const app = express();
 
-let port = 3004;
+const port = 3004;
 
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.listen(3004, function() {
   console.log(`listening on port ${port}`)
-})
+});
+
+app.get('/getRooms', (req, res) => {
+  db.getAllRecords(res.send.bind(res));
+});

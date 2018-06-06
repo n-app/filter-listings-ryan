@@ -16,10 +16,12 @@
     "server-dev": "nodemon server/index.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "^4.16.3",
     "mysql": "^2.15.0",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react-dom": "^16.4.0",
+    "react-star-ratings": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

@@ -6,7 +6,7 @@ const getRandomInteger = (min, max) => {
 
 const getNumberForAllEntries = (min, max, numberOfEntries) => {
   let allValues = [];
-  for (var i = 0; i < numberOfEntries; i++) {
+  for (let i = 0; i < numberOfEntries; i++) {
     allValues.push(getRandomInteger(min, max))
   }
   return allValues;
@@ -14,52 +14,45 @@ const getNumberForAllEntries = (min, max, numberOfEntries) => {
 
 const getRoomPicUrl = (numberOfEntries) => {
     let allUrls = [];
-    for (var i = 0; i < numberOfEntries; i++) {
+    for (let i = 0; i < numberOfEntries; i++) {
         allUrls.push('https://s3.us-east-2.amazonaws.com/airbnb-clone-pics/room-pic_' + i + '.jpg')
     }
     return allUrls;
 }
 
-loremIpsum = [
-  'lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur',
-  'adipiscing', 'elit', 'curabitur', 'vel', 'hendrerit', 'libero',
-  'eleifend', 'blandit', 'nunc', 'ornare', 'odio', 'ut',
-  'orci', 'gravida', 'imperdiet', 'nullam', 'purus', 'lacinia',
-  'a', 'pretium', 'quis', 'congue', 'praesent', 'sagittis', 
-  'laoreet', 'auctor', 'mauris', 'non', 'velit', 'eros',
-  'dictum', 'proin', 'accumsan', 'sapien', 'nec', 'massa',
-  'volutpat', 'venenatis', 'sed', 'eu', 'molestie', 'lacus',
-  'quisque', 'porttitor', 'ligula', 'dui', 'mollis', 'tempus',
-  'at', 'magna', 'vestibulum', 'turpis', 'ac', 'diam',
-  'tincidunt', 'id', 'condimentum', 'enim', 'sodales', 'in',
-  'hac', 'habitasse', 'platea', 'dictumst', 'aenean', 'neque',
-  'fusce', 'augue', 'leo', 'eget', 'semper', 'mattis', 
-  'tortor', 'scelerisque', 'nulla', 'interdum', 'tellus', 'malesuada',
-  'rhoncus', 'porta', 'sem', 'aliquet', 'et', 'nam',
-  'suspendisse', 'potenti', 'vivamus', 'luctus', 'fringilla', 'erat',
-  'donec', 'justo', 'vehicula', 'ultricies', 'varius', 'ante',
-  'primis', 'faucibus', 'ultrices', 'posuere', 'cubilia', 'curae',
-  'etiam', 'cursus', 'aliquam', 'quam', 'dapibus', 'nisl',
-  'feugiat', 'egestas', 'class', 'aptent', 'taciti', 'sociosqu',
-  'ad', 'litora', 'torquent', 'per', 'conubia', 'nostra',
-  'inceptos', 'himenaeos', 'phasellus', 'nibh', 'pulvinar', 'vitae',
-  'urna', 'iaculis', 'lobortis', 'nisi', 'viverra', 'arcu',
-  'morbi', 'pellentesque', 'metus', 'commodo', 'ut', 'facilisis',
-  'felis', 'tristique', 'ullamcorper', 'placerat', 'aenean', 'convallis',
-  'sollicitudin', 'integer', 'rutrum', 'duis', 'est', 'etiam',
-  'bibendum', 'donec', 'pharetra', 'vulputate', 'maecenas', 'mi',
-  'fermentum', 'consequat', 'suscipit', 'aliquam', 'habitant', 'senectus',
-  'netus', 'fames', 'quisque', 'euismod', 'curabitur', 'lectus',
-  'elementum', 'tempor', 'risus', 'cras'
+const loremIpsum = [
+  "Lorem", "Ipsum", "Dolor", "Sit", "Amet", "Consectetur", "Adipiscing",
+  "Elit", "Curabitur", "Vel", "Hendrerit", "Libero", "Eleifend", "Blandit",
+  "Nunc", "Ornare", "Odio", "Ut", "Orci", "Gravida", "Imperdiet", "Nullam",
+  "Purus", "Lacinia", "A", "Pretium", "Quis", "Congue", "Praesent", "Sagittis",
+  "Laoreet", "Auctor", "Mauris", "Non", "Velit", "Eros", "Dictum", "Proin", "Accumsan",
+  "Sapien", "Nec", "Massa", "Volutpat", "Venenatis", "Sed", "Eu", "Molestie", "Lacus",
+  "Quisque", "Porttitor", "Ligula", "Dui", "Mollis", "Tempus", "At", "Magna", "Vestibulum",
+  "Turpis", "Ac", "Diam", "Tincidunt", "Id", "Condimentum", "Enim", "Sodales", "In",
+  "Hac", "Habitasse", "Platea", "Dictumst", "Aenean", "Neque", "Fusce", "Augue", "Leo",
+  "Eget", "Semper", "Mattis", "Tortor", "Scelerisque", "Nulla", "Interdum", "Tellus",
+  "Malesuada", "Rhoncus", "Porta", "Sem", "Aliquet", "Et", "Nam", "Suspendisse", "Potenti",
+  "Vivamus", "Luctus", "Fringilla", "Erat", "Donec", "Justo", "Vehicula", "Ultricies",
+  "Varius", "Ante", "Primis", "Faucibus", "Ultrices", "Posuere", "Cubilia", "Curae",
+  "Etiam", "Cursus", "Aliquam", "Quam", "Dapibus", "Nisl", "Feugiat", "Egestas",
+  "Class", "Aptent", "Taciti", "Sociosqu", "Ad", "Litora", "Torquent", "Per", "Conubia",
+  "Nostra", "Inceptos", "Himenaeos", "Phasellus", "Nibh", "Pulvinar", "Vitae", "Urna",
+  "Iaculis", "Lobortis", "Nisi", "Viverra", "Arcu", "Morbi", "Pellentesque", "Metus",
+  "Commodo", "Ut", "Facilisis", "Felis", "Tristique", "Ullamcorper", "Placerat", "Aenean",
+  "Convallis", "Sollicitudin", "Integer", "Rutrum", "Duis", "Est", "Etiam", "Bibendum",
+  "Donec", "Pharetra", "Vulputate", "Maecenas", "Mi", "Fermentum", "Consequat", "Suscipit",
+  "Aliquam", "Habitant", "Senectus", "Netus", "Fames", "Quisque", "Euismod", "Curabitur",
+  "Lectus", "Elementum", "Tempor", "Risus", "Cras"
 ];
+
 
 const getNameForAllEntries = (words, numberOfEntries) => {
   let allWords = [];
-  for (var i = 0; i < numberOfEntries; i++) {
+  for (let i = 0; i < numberOfEntries; i++) {
     let numberOfRandomWords = words.length;
     let numberOfWordsInName = getRandomInteger(1, 3)
     let nameOfRoom = [];
-    for (var j = 0; j < numberOfWordsInName; j++) {
+    for (let j = 0; j < numberOfWordsInName; j++) {
       nameOfRoom.push(words[getRandomInteger(0, numberOfRandomWords)])
     }
     nameOfRoom = nameOfRoom.join(' ')
@@ -68,18 +61,18 @@ const getNameForAllEntries = (words, numberOfEntries) => {
   return allWords;
 }
 
-let allRoomNames = getNameForAllEntries(loremIpsum, 600);
-let allPrices = getNumberForAllEntries(50, 750, 600);
-let allNumberOfRooms = getNumberForAllEntries(1, 7, 600);
-let allRatings = getNumberForAllEntries(1, 5, 600);
-let allNumberOfReviews = getNumberForAllEntries(0, 500, 600);
-let allUrls = getRoomPicUrl(600);
+const allRoomNames = getNameForAllEntries(loremIpsum, 600);
+const allPrices = getNumberForAllEntries(50, 750, 600);
+const allNumberOfRooms = getNumberForAllEntries(1, 7, 600);
+const allRatings = getNumberForAllEntries(1, 5, 600);
+const allNumberOfReviews = getNumberForAllEntries(0, 500, 600);
+const allUrls = getRoomPicUrl(600);
 
-let columnData = [allRoomNames, allPrices, allNumberOfRooms, allRatings, allNumberOfReviews, allUrls]
+const columnData = [allRoomNames, allPrices, allNumberOfRooms, allRatings, allNumberOfReviews, allUrls]
 
-let createRecords = (columns) => {
+const createRecords = (columns) => {
   let records = [];
-  for (var i = 0; i < columns[0].length; i++) {
+  for (let i = 0; i < columns[0].length; i++) {
     let record = [];
     columns.forEach((column)=> {
       record.push(column[i])
@@ -89,7 +82,6 @@ let createRecords = (columns) => {
   return records;
 }
 
-let allRecords = createRecords(columnData);
+const allRecords = createRecords(columnData);
 
-let sql = 'INSERT INTO roomlist (roomname, price, numberOfBedrooms, rating, numberOfReviews, urlToImage) VALUES ?';
-db.insertRecords(sql, allRecords);
+db.insertRecords(allRecords);
