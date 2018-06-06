@@ -40,6 +40,21 @@
   margin-right: auto;
 }
 
+.rating {
+  font-weight: 600 !important;
+  margin: 0px !important;
+  word-wrap: break-word !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 10px !important;
+  line-height: 16px !important;
+  letter-spacing: normal !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  color: #484848 !important;
+  display: inline !important;
+}
+
+
 .carousel {
   width: 80%;
   margin-left: auto;
