@@ -16,6 +16,7 @@ const Modal = (props) => {
             increaseBedCount = {props.increaseBedCount}
             toggleModal = {props.toggleModal}
             applyFilters = {props.applyFilters}
+            clearFilter = {props.clearFilter}
           />}
         </div>
         </div>

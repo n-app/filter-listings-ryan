@@ -54,7 +54,8 @@ class App extends React.Component {
     this.onSliderChange = this.onSliderChange.bind(this);
     this.decreaseBedCount = this.decreaseBedCount.bind(this);
     this.increaseBedCount = this.increaseBedCount.bind(this);
-    this.applyFilters = this.applyFilters.bind(this)
+    this.applyFilters = this.applyFilters.bind(this);
+    this.clearFilter = this.clearFilter.bind(this);
   }
 
   // componentDidMount() {
@@ -127,6 +128,18 @@ class App extends React.Component {
     this.toggleModal(null)
   }
 
+  //Helper function for all filter components
+  clearFilter(filterType) {
+    if (filterType === 'BedroomsCounter') {
+      this.setState({
+        bedMin: 0,
+      })
+    } else if (filterType === 'PriceSlider') {
+      this.setState({
+        priceLimits: [0,1000],
+      })
+    }
+  }
 
   //Helper function for Carousel Component
   previousSlide() {
@@ -160,12 +173,18 @@ class App extends React.Component {
           decreaseBedCount = {this.decreaseBedCount}
           increaseBedCount = {this.increaseBedCount}
           applyFilters = {this.applyFilters}
+          clearFilter = {this.clearFilter}
           toggleModal = {this.toggleModal}
           currentModalDisplay = {this.state.currentModalDisplay}
           preventClose = {this.stopPropagation}
         />
         
-        <RoomListCarousel activeIndex={this.state.activeIndex} displayedRooms={this.state.displayedRooms} previousSlide={this.previousSlide} nextSlide={this.nextSlide}/>
+        <RoomListCarousel
+          activeIndex={this.state.activeIndex}
+          displayedRooms={this.state.displayedRooms}
+          previousSlide={this.previousSlide}
+          nextSlide={this.nextSlide}
+        />
       </div>
     )
   }

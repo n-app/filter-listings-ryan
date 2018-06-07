@@ -10,6 +10,10 @@ const BedroomsCounter = (props) => {
         <button id='increase-btn' onClick={props.increaseBedCount}>+</button>
       </div>
 
+      <button onClick={()=>props.clearFilter('BedroomsCounter')}>
+        Clear
+      </button>
+
       <button onClick={props.applyFilters}>
         Apply
       </button>
