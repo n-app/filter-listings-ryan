@@ -5,9 +5,9 @@ const BedroomsCounter = (props) => {
     <div>
       <div>
         <span>Beds</span>
-        <button onClick={props.decreaseBedCount}>-</button>
-        <span>{props.bedMin}+</span>
-        <button onClick={props.increaseBedCount}>+</button>
+        <button id='decrease-btn' onClick={props.decreaseBedCount}>-</button>
+        <span id='bed-count'>{props.bedMin}+</span>
+        <button id='increase-btn' onClick={props.increaseBedCount}>+</button>
       </div>
 
       <button onClick={props.applyFilters}>
