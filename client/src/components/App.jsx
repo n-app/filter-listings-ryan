@@ -45,7 +45,7 @@ class App extends React.Component {
       isOpen: false,
       currentModalDisplay: null,
       priceLimits: [0,1000],
-      bedMin: 0,
+      bedMin: 1,
     };
 
     this.toggleModal = this.toggleModal.bind(this);
@@ -94,13 +94,13 @@ class App extends React.Component {
 
   //Helper function for BedroomCounter Component
   decreaseBedCount() {
-    if (this.state.bedMin >= 1) {
+    if (this.state.bedMin >= 2) {
       this.setState({
         bedMin: this.state.bedMin - 1,
       })
     } else {
       this.setState({
-        bedMin: 0,
+        bedMin: 1,
       })
     }
   }
@@ -132,7 +132,7 @@ class App extends React.Component {
   clearFilter(filterType) {
     if (filterType === 'BedroomsCounter') {
       this.setState({
-        bedMin: 0,
+        bedMin: 1,
       })
     } else if (filterType === 'PriceSlider') {
       this.setState({

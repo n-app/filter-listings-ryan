@@ -27,11 +27,11 @@ describe('Bedroom Count Component', () => {
      expect(buttonText).toEqual('Bedrooms');
   });
 
-  test('Clicking Bedrooms button opens bedroom count modal and initial count is 0+', async () => {
+  test('Clicking Bedrooms button opens bedroom count modal and initial count is 1+', async () => {
     await page.click('#bedrooms-btn');
     await page.waitForSelector('#bed-count');
     const bedroomCount = await page.$eval('#bed-count', e => e.textContent);
-    expect(bedroomCount).toEqual('0+')
+    expect(bedroomCount).toEqual('1+')
   })
 
   test('Clicking the Plus and Minus buttons change the bed count correctly', async () => {
@@ -41,10 +41,10 @@ describe('Bedroom Count Component', () => {
     await page.click('#increase-btn');
     await page.click('#decrease-btn');
     const bedroomCount = await page.$eval('#bed-count', e => e.textContent);
-    expect(bedroomCount).toEqual('1+')
+    expect(bedroomCount).toEqual('2+')
   })
 
-  test('Clicking Minus button does not set count lower than 0', async () => {
+  test('Clicking Minus button does not set count lower than 1', async () => {
     await page.click('#bedrooms-btn');
     await page.waitForSelector('#bed-count');
     await page.click('#increase-btn');
@@ -52,7 +52,7 @@ describe('Bedroom Count Component', () => {
     await page.click('#decrease-btn');
     await page.click('#increase-btn');
     const bedroomCount = await page.$eval('#bed-count', e => e.textContent);
-    expect(bedroomCount).toEqual('1+')
+    expect(bedroomCount).toEqual('2+')
   })
 });
 

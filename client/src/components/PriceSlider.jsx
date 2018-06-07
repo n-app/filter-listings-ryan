@@ -14,9 +14,12 @@ const PriceSlider = (props) => {
         value={props.priceLimits}
         onChange={props.onSliderChange}
       />
-      <button onClick={()=>props.clearFilter('PriceSlider')}>
-        Clear
-      </button>
+      {props.priceLimits[0] === 0 && props.priceLimits[1] === 1000 ? null : (
+        <button onClick={()=>props.clearFilter('PriceSlider')}>
+          Clear
+        </button>
+      )}
+      
       <button onClick={props.applyFilters}>
         Apply
       </button>
