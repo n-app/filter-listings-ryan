@@ -43,6 +43,7 @@ class App extends React.Component {
       ],
       activeIndex: 0,
       isOpen: false,
+      currentModalDisplay: null,
     };
 
     this.toggleModal = this.toggleModal.bind(this);
@@ -64,8 +65,12 @@ class App extends React.Component {
   //     });
   // }
 
-  toggleModal() {
-    this.setState({isOpen:!this.state.isOpen})
+  toggleModal(modalType) {
+    console.log(modalType)
+    this.setState({
+      isOpen:!this.state.isOpen,
+      currentModalDisplay: modalType,
+    });
   }
 
   stopPropagation(event) {
@@ -91,10 +96,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.toggleModal}>
+        <button onClick={()=> this.toggleModal(PriceSlider)}>
           Bedrooms
         </button>
-        <Modal show={this.state.isOpen} toggleModal={this.toggleModal} children={<PriceSlider/>} preventClose={this.stopPropagation}/>
+
+        <Modal show={this.state.isOpen} toggleModal={this.toggleModal} currentModalDisplay={this.state.currentModalDisplay}  preventClose={this.stopPropagation}/>
         
         <RoomListCarousel activeIndex={this.state.activeIndex} displayedRooms={this.state.displayedRooms} previousSlide={this.previousSlide} nextSlide={this.nextSlide}/>
       </div>
