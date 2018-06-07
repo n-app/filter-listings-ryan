@@ -3,7 +3,7 @@ import axios from 'axios';
 import RoomListCarousel from './RoomListCarousel.jsx';
 import Modal from './Modal.jsx';
 import PriceSlider from './PriceSlider.jsx';
-import handle from './PriceSlider.jsx';
+import BedroomsCounter from './BedroomsCounter.jsx';
 import '../css/slider.css';
 import '../css/style.css';
 
@@ -44,11 +44,17 @@ class App extends React.Component {
       activeIndex: 0,
       isOpen: false,
       currentModalDisplay: null,
+      priceLimits: [0,1000],
+      bedMin: 0,
     };
 
     this.toggleModal = this.toggleModal.bind(this);
     this.previousSlide = this.previousSlide.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
+    this.onSliderChange = this.onSliderChange.bind(this);
+    this.decreaseBedCount = this.decreaseBedCount.bind(this);
+    this.increaseBedCount = this.increaseBedCount.bind(this);
+    this.applyFilters = this.applyFilters.bind(this)
   }
 
   // componentDidMount() {
@@ -65,18 +71,64 @@ class App extends React.Component {
   //     });
   // }
 
+  //Helper function for Modal Component
   toggleModal(modalType) {
-    console.log(modalType)
     this.setState({
       isOpen:!this.state.isOpen,
       currentModalDisplay: modalType,
     });
   }
 
+  //Helper function for Modal Component
   stopPropagation(event) {
     event.stopPropagation();
   }
 
+  //Helper function for PriceSlider Component
+  onSliderChange(value) {
+    this.setState({
+      priceLimits:value,
+    });
+  }
+
+  //Helper function for BedroomCounter Component
+  decreaseBedCount() {
+    if (this.state.bedMin >=1) {
+      this.setState({
+        bedMin: this.state.bedMin - 1,
+      })
+    } else {
+      this.setState({
+        bedMin: 0
+      })
+    }
+  }
+
+  //Helper function for BedroomCounter Component
+  increaseBedCount() {
+    this.setState({
+      bedMin: this.state.bedMin + 1,
+    })
+  }
+
+  //Helper function for all filter Components
+  applyFilters() {
+    let filteredList = [];
+    this.state.allRooms.forEach((room)=> {
+      if (
+        room.numberOfBedrooms >= this.state.bedMin 
+        && room.price >= this.state.priceLimits[0]
+        && room.price <= this.state.priceLimits[1]
+      ) {
+        filteredList.push(room);
+      }
+    })
+    this.setState({displayedRooms: filteredList})
+    this.toggleModal(null)
+  }
+
+
+  //Helper function for Carousel Component
   previousSlide() {
     if (this.state.activeIndex > 0) {
       this.setState({activeIndex: this.state.activeIndex - 1});
@@ -85,6 +137,7 @@ class App extends React.Component {
     }
   }
 
+  //Helper function for Carousel Component
   nextSlide() {
     if (this.state.activeIndex < 3) {
       this.setState({activeIndex: this.state.activeIndex + 1});
@@ -92,15 +145,25 @@ class App extends React.Component {
       this.setState({activeIndex: 0})
     }
   }
-  
+
   render() {
     return (
       <div>
-        <button onClick={()=> this.toggleModal(PriceSlider)}>
-          Bedrooms
-        </button>
+        <button onClick={()=> this.toggleModal(PriceSlider)}>Price</button>
+        <button onClick={()=> this.toggleModal(BedroomsCounter)}>Bedrooms</button>
 
-        <Modal show={this.state.isOpen} toggleModal={this.toggleModal} currentModalDisplay={this.state.currentModalDisplay}  preventClose={this.stopPropagation}/>
+        <Modal 
+          show = {this.state.isOpen}
+          priceLimits = {this.state.priceLimits}
+          onSliderChange = {this.onSliderChange}
+          bedMin = {this.state.bedMin}
+          decreaseBedCount = {this.decreaseBedCount}
+          increaseBedCount = {this.increaseBedCount}
+          applyFilters = {this.applyFilters}
+          toggleModal = {this.toggleModal}
+          currentModalDisplay = {this.state.currentModalDisplay}
+          preventClose = {this.stopPropagation}
+        />
         
         <RoomListCarousel activeIndex={this.state.activeIndex} displayedRooms={this.state.displayedRooms} previousSlide={this.previousSlide} nextSlide={this.nextSlide}/>
       </div>
