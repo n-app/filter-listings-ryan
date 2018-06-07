@@ -1,7 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import RoomListCarousel from './RoomListCarousel.jsx';
+import Modal from './Modal.jsx';
+import PriceSlider from './PriceSlider.jsx';
+import handle from './PriceSlider.jsx';
+import '../css/slider.css';
 import '../css/style.css';
+
 
 class App extends React.Component {
   constructor (props) {
@@ -37,7 +42,12 @@ class App extends React.Component {
         {"id":12,"roomname":"tempus torquent praesent","price":679,"numberOfBedrooms":1,"rating":3,"numberOfReviews":440,"urlToImage":"https://doormandesigns.com/wp-content/uploads/2016/10/alex-gernier-apartment-therapy-doorman-designs-2.jpg"},
       ],
       activeIndex: 0,
-    }
+      isOpen: false,
+    };
+
+    this.toggleModal = this.toggleModal.bind(this);
+    this.previousSlide = this.previousSlide.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
   }
 
   // componentDidMount() {
@@ -54,6 +64,14 @@ class App extends React.Component {
   //     });
   // }
 
+  toggleModal() {
+    this.setState({isOpen:!this.state.isOpen})
+  }
+
+  stopPropagation(event) {
+    event.stopPropagation();
+  }
+
   previousSlide() {
     if (this.state.activeIndex > 0) {
       this.setState({activeIndex: this.state.activeIndex - 1});
@@ -69,11 +87,16 @@ class App extends React.Component {
       this.setState({activeIndex: 0})
     }
   }
-
+  
   render() {
     return (
       <div>
-        <RoomListCarousel activeIndex={this.state.activeIndex} displayedRooms={this.state.displayedRooms} previousSlide={this.previousSlide.bind(this)} nextSlide={this.nextSlide.bind(this)}/>
+        <button onClick={this.toggleModal}>
+          Bedrooms
+        </button>
+        <Modal show={this.state.isOpen} toggleModal={this.toggleModal} children={<PriceSlider/>} preventClose={this.stopPropagation}/>
+        
+        <RoomListCarousel activeIndex={this.state.activeIndex} displayedRooms={this.state.displayedRooms} previousSlide={this.previousSlide} nextSlide={this.nextSlide}/>
       </div>
     )
   }

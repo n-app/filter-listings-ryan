@@ -4,7 +4,7 @@ import StarRatings from 'react-star-ratings';
 const RoomListEntry = (props) => {
   let slideStyle = {
     transform: `translateX(${props.activeIndex * -100}%)`,
-    transition: '0.2s'
+    transition: '0.2s',
   }
   return (
     <div className='image-slide' style={slideStyle}>

@@ -15,7 +15,9 @@ connection.connect((err) => {
 })
 
 const insertRecords = (data) => {
-  connection.query('INSERT INTO roomlist (roomname, price, numberOfBedrooms, rating, numberOfReviews, urlToImage) VALUES ?', [data]);
+  connection.query(
+    'INSERT INTO roomlist (roomname, price, numberOfBedrooms, rating, numberOfReviews, urlToImage) VALUES ?', [data]
+  );
 }
 
 const getAllRecords = (sendCallback) => {
