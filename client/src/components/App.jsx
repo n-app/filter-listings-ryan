@@ -93,13 +93,13 @@ class App extends React.Component {
 
   //Helper function for BedroomCounter Component
   decreaseBedCount() {
-    if (this.state.bedMin >=1) {
+    if (this.state.bedMin >= 1) {
       this.setState({
         bedMin: this.state.bedMin - 1,
       })
     } else {
       this.setState({
-        bedMin: 0
+        bedMin: 0,
       })
     }
   }
@@ -114,7 +114,7 @@ class App extends React.Component {
   //Helper function for all filter Components
   applyFilters() {
     let filteredList = [];
-    this.state.allRooms.forEach((room)=> {
+    this.state.allRooms.forEach((room) => {
       if (
         room.numberOfBedrooms >= this.state.bedMin 
         && room.price >= this.state.priceLimits[0]
@@ -149,8 +149,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={()=> this.toggleModal(PriceSlider)}>Price</button>
-        <button onClick={()=> this.toggleModal(BedroomsCounter)}>Bedrooms</button>
+        <button id='price-btn' onClick={() => this.toggleModal(PriceSlider)}>Price</button>
+        <button id='bedrooms-btn' onClick={() => this.toggleModal(BedroomsCounter)}>Bedrooms</button>
 
         <Modal 
           show = {this.state.isOpen}
