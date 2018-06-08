@@ -8,12 +8,15 @@ const BedroomsCounter = (props) => {
   }
   
   return (
-    <div>
+    <div id="bedrooms-counter-content">
       <div className="modal-text">
         <span>Beds</span>
-        <button className="plus-minus-btn" disabled={atDefault} id="decrease-btn" onClick={props.decreaseBedCount}>-</button>
-        <span id="bed-count">{props.bedMin}+</span>
-        <button className="plus-minus-btn" id="increase-btn" onClick={props.increaseBedCount}>+</button>
+
+        <div className="plus-minus-content">
+          <button className="plus-minus-btn" disabled={atDefault} id="decrease-btn" onClick={props.decreaseBedCount}>-</button>
+          <span id="bed-count">{props.bedMin}+</span>
+          <button className="plus-minus-btn" id="increase-btn" onClick={props.increaseBedCount}>+</button>
+        </div>
       </div>
 
       {props.bedMin === 1 ? null : (
