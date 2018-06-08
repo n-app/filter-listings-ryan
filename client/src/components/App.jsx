@@ -7,7 +7,6 @@ import BedroomsCounter from './BedroomsCounter.jsx';
 import '../css/slider.css';
 import '../css/style.css';
 
-
 class App extends React.Component {
   constructor (props) {
     super(props)
@@ -162,8 +161,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <button id='price-btn' onClick={() => this.toggleModal(PriceSlider)}>Price</button>
-        <button id='bedrooms-btn' onClick={() => this.toggleModal(BedroomsCounter)}>Bedrooms</button>
+        <button className='main-btn' id='price-btn' onClick={() => this.toggleModal(PriceSlider)}>Price</button>
+        <button className='main-btn' id='bedrooms-btn' onClick={() => this.toggleModal(BedroomsCounter)}>Bedrooms</button>
 
         <Modal 
           show = {this.state.isOpen}

@@ -149,3 +149,151 @@
   vertical-align: middle;
   margin: auto;
 }
+
+.main-btn {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: normal;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #484848;
+  background: none;
+  border: 1px solid #dce0e0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 12px;
+  padding-right: 12px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+}
+
+.main-btn:hover {
+  background: #F2F2F2;
+  border-color: #F2F2F2;
+}
+
+.filtered-btn {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: normal;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: rgb(72, 72, 72);
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 12px;
+  padding-right: 12px;
+  position: relative;
+  text-align: center;
+  width: auto;
+  border-radius: 4px;
+  text-decoration: none;
+  background: rgb(0, 132, 137);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(0, 132, 137);
+  border-image: initial;
+}
+
+.filtered-btn:hover {
+  background: rgb(0, 108, 112);
+  border-color: rgb(0, 108, 112);
+}
+
+.apply-btn {
+  color: rgb(0, 132, 137);
+  -webkit-appearance: none;
+  cursor: pointer;
+  user-select: auto;
+  text-align: left;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  background: transparent;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  margin: 0px;
+  padding: 0px;
+}
+
+.clear-btn {
+  -webkit-appearance: none;
+  cursor: pointer;
+  user-select: auto;
+  text-align: left;
+  color: rgb(72, 72, 72);
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  background: transparent;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  margin: 0px;
+  padding: 0px;
+}
+
+.apply-btn:hover,
+.apply-btn:focus,
+.clear-btn:hover,
+.clear-btn:focus {
+  text-decoration: underline;
+}
+
+.apply-btn:active,
+.clear-btn:active {
+  color: rgb(0, 108, 112);
+  outline: 0px;
+}
+
+.plus-minus-btn {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  touch-action: manipulation;
+  width: 32px;
+  height: 32px;
+  box-shadow: none;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgb(0, 132, 137);
+  background: transparent;
+  border-width: 1px;
+}
+
+.plus-minus-btn:active {
+  border-color: rgb(0, 106, 112);
+  background: transparent;
+}
+.plus-minus-btn:disabled {
+  cursor: default;
+  border-color: rgba(0, 132, 137, 0.3);
+  background: transparent;
+}
+
+.plus-minus-btn:focus {
+  box-shadow: rgb(0, 132, 137) 0px 0px 2px 2px;
+  outline: none;
+}
+
+.modal-text {
+  word-wrap: break-word;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: rgb(72, 72, 72);
+  font-weight: normal;
+  margin: 0px;
+}
