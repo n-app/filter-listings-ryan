@@ -23,6 +23,7 @@
     "rc-slider": "^8.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-image-gallery": "^0.8.8",
     "react-star-ratings": "^2.2.0"
   },
   "devDependencies": {

@@ -6,6 +6,7 @@ import PriceSlider from './PriceSlider.jsx';
 import BedroomsCounter from './BedroomsCounter.jsx';
 import '../css/slider.css';
 import '../css/style.css';
+import 'react-image-gallery/styles/css/image-gallery.css';
 
 class App extends React.Component {
   constructor (props) {
