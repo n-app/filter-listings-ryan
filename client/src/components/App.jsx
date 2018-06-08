@@ -159,15 +159,38 @@ class App extends React.Component {
   }
 
   render() {
+    if (
+      (this.state.isOpen === true && this.state.currentModalDisplay === PriceSlider)
+      || (this.state.priceLimits[0] !== 0 || this.state.priceLimits[1] !== 1000)
+    ) {
+      var priceButtonDisplay = 'filter-on-btn';
+      var priceButtonText = `$${this.state.priceLimits[0]} - $${this.state.priceLimits[1]}`;
+    } else {
+      var priceButtonDisplay = 'main-btn';
+      var priceButtonText = 'Price';
+    }
+
+    if (
+      (this.state.isOpen === true && this.state.currentModalDisplay === BedroomsCounter)
+      || this.state.bedMin !== 1
+    ) {
+      var bedroomsButtonDisplay = 'filter-on-btn';
+      var bedroomsButtonText = `${this.state.bedMin}+ Beds`;
+    } else {
+      var bedroomsButtonDisplay = 'main-btn';
+      var bedroomsButtonText = 'Bedrooms';
+    }
+
+
     return (
       <div>
         <div className="menu">
           <div id="btn-container">
             <span className="btn-spacer">
-              <button className="main-btn" id="price-btn" onClick={() => this.toggleModal(PriceSlider)}>Price</button>
+              <button className={priceButtonDisplay} id="price-btn" onClick={() => this.toggleModal(PriceSlider)}>{priceButtonText}</button>
             </span>
             <span className="btn-spacer">
-              <button className="main-btn" id="bedrooms-btn" onClick={() => this.toggleModal(BedroomsCounter)}>Bedrooms</button>
+              <button className={bedroomsButtonDisplay} id="bedrooms-btn" onClick={() => this.toggleModal(BedroomsCounter)}>{bedroomsButtonText}</button>
             </span>
           </div>
         </div>
