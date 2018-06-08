@@ -13,7 +13,6 @@ const RoomListCarousel = (props) => {
           clickFunction={props.previousSlide}
           glyph="&#9664;" />
 
-
       <div id='room-carousel'>
         {firstHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex}/>)}
       </div>

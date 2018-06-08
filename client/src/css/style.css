@@ -1,3 +1,7 @@
+body {
+  margin:0px;
+}
+
 .bedroomNum{
   word-wrap: break-word ;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif ;
@@ -99,6 +103,37 @@
   display: inline-block;
 }
 
+.menu {
+  background: rgb(255, 255, 255);
+  position: fixed;
+  width:100%;
+  border: 1px solid rgb(219, 219, 219);
+  height: 65px;
+  box-sizing: border-box;
+  display:block;
+}
+
+#btn-container {
+  padding-top: 16px ;
+  padding-right: 72px ;
+  padding-bottom: 16px ;
+  padding-left: 72px
+}
+
+.btn-spacer {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.content {
+    position:absolute;
+    top: 65px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    overflow-y:scroll;        
+}
+
 .modal-overlay-div {
     position: fixed;
     top: 0;
@@ -108,10 +143,10 @@
     height: 100%;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, .65);
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
-.modal-content-div {
+/* .modal-content-div {
     position: fixed;
     top: 0;
     right: 0;
@@ -121,14 +156,27 @@
     overflow: auto;
     text-align: center;
     padding: 4px;
-}
+} */
 
-.modal-content-div:after {
-    vertical-align: middle;
-    display: inline-block;
-    height: 100%;
-    margin-left: -.05em;
-    content: '';
+.modal-content-div {
+  position: absolute;
+  top: 65px;
+  left: 0px;
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 14px 36px 2px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: normal;
+  display: inline-block;
+  max-height: 55vh;
+  visibility: visible;
+  background: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-image: initial;
+  border-radius: 4px;
+  padding: 24px;
 }
 
 .modal-dialog-div {
