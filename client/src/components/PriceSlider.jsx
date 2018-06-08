@@ -5,8 +5,8 @@ const Range = Slider.Range;
 
 const PriceSlider = (props) => {
   return (
-    <div id='slider'>
-      <div className='modal-text'>
+    <div id="slider">
+      <div className="modal-text">
         ${props.priceLimits[0]} - ${props.priceLimits[1]}+
       </div>
       <Range
@@ -17,12 +17,12 @@ const PriceSlider = (props) => {
         onChange={props.onSliderChange}
       />
       {props.priceLimits[0] === 0 && props.priceLimits[1] === 1000 ? null : (
-        <button className='clear-btn' onClick={()=>props.clearFilter('PriceSlider')}>
+        <button className="clear-btn" onClick={()=>props.clearFilter('PriceSlider')}>
           Clear
         </button>
       )}
       
-      <button className='apply-btn' onClick={props.applyFilters}>
+      <button className="apply-btn" onClick={props.applyFilters}>
         Apply
       </button>
     </div>

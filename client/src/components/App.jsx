@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'React';
 import axios from 'axios';
 import RoomListCarousel from './RoomListCarousel.jsx';
 import Modal from './Modal.jsx';
@@ -161,16 +161,17 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className='menu'>
-          <div id='btn-container'>
-            <span className='btn-spacer'>
-              <button className='main-btn' id='price-btn' onClick={() => this.toggleModal(PriceSlider)}>Price</button>
+        <div className="menu">
+          <div id="btn-container">
+            <span className="btn-spacer">
+              <button className="main-btn" id="price-btn" onClick={() => this.toggleModal(PriceSlider)}>Price</button>
             </span>
-            <span className='btn-spacer'>
-              <button className='main-btn' id='bedrooms-btn' onClick={() => this.toggleModal(BedroomsCounter)}>Bedrooms</button>
+            <span className="btn-spacer">
+              <button className="main-btn" id="bedrooms-btn" onClick={() => this.toggleModal(BedroomsCounter)}>Bedrooms</button>
             </span>
           </div>
         </div>
+
         <Modal 
           show = {this.state.isOpen}
           priceLimits = {this.state.priceLimits}
@@ -184,7 +185,8 @@ class App extends React.Component {
           currentModalDisplay = {this.state.currentModalDisplay}
           preventClose = {this.stopPropagation}
         />
-        <div className='content'>
+
+        <div className="content">
           <RoomListCarousel
             activeIndex={this.state.activeIndex}
             displayedRooms={this.state.displayedRooms}

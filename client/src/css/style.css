@@ -177,6 +177,8 @@ body {
   border-image: initial;
   border-radius: 4px;
   padding: 24px;
+  
+  
 }
 
 .modal-dialog-div {
@@ -189,7 +191,8 @@ body {
     box-sizing: border-box;
     max-width: auto;
     border-radius: 4px;
-    background-color: white
+    background-color: white;
+    text-align: center;
 }
 
 #slider {

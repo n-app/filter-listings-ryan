@@ -7,17 +7,17 @@ const RoomListCarousel = (props) => {
   let firstHalf = props.displayedRooms.slice(0,halfLength);
   let secondHalf = props.displayedRooms.slice(halfLength,props.displayedRooms.length);
   return (
-    <div className='carousel'>
+    <div className="carousel">
       <RoomListCarouselArrow
           direction="left"
           clickFunction={props.previousSlide}
           glyph="&#9664;" />
 
-      <div id='room-carousel'>
+      <div id="room-carousel">
         {firstHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex}/>)}
       </div>
 
-      <div id='room-carousel'>
+      <div id="room-carousel">
         {secondHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex}/>)}
       </div>
 
