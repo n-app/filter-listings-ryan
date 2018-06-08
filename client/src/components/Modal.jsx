@@ -5,7 +5,7 @@ const Modal = (props) => {
     return null;
   } else {
     return (
-      <div className='modal-overlay-div' onClick={() => props.toggleModal(null)}>
+      <div className='modal-overlay-div' onClick={props.applyFilters}>
         <div className='modal-content-div' >
         <div className="modal-dialog-div" onClick={props.preventClose}>
           {<props.currentModalDisplay
