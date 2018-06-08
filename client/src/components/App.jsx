@@ -123,8 +123,12 @@ class App extends React.Component {
         filteredList.push(room);
       }
     })
-    this.setState({displayedRooms: filteredList})
+    this.setState({
+      displayedRooms: filteredList,
+      activeIndex:0,
+    })
     this.toggleModal(null)
+  
   }
 
   //Helper function for all filter components
@@ -180,7 +184,6 @@ class App extends React.Component {
       var bedroomsButtonDisplay = 'main-btn';
       var bedroomsButtonText = 'Bedrooms';
     }
-
 
     return (
       <div>

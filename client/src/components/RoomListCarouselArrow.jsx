@@ -1,10 +1,10 @@
 import React from 'React';
 
 const RoomListCarouselArrow = (props) => (
-  <div
-    className={`slide-arrow ${props.direction}`}
-    onClick={props.clickFunction}>
-    {props.glyph}
+  <div onClick={props.clickFunction} className={`slide-arrow ${props.direction}`}>
+    <svg> 
+      {props.arrow}
+    </svg>
   </div>
 );
 

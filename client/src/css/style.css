@@ -59,31 +59,46 @@ body {
 }
 
 
-.carousel {
-  width: 80%;
+.carousel-content {
+  /* width: 80%; */
+  padding-top:25px;
   margin-left: auto;
   margin-right: auto;
   height:585px;
 }
 
+#carousel {
+  display:inline-block;
+  box-sizing: border-box;
+  width:80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .left {
   text-align: center;
-  width: 5%;
   height: 585px;
-  float: left;
   line-height: 585px;
+  fill:rgb(118, 118, 118);
+  display:inline-block;
+  width: 24px;
+  box-sizing: border-box;
+  
+  /* float: left; */
 }
 
 .right {
   text-align: center;
-  width: 5%;
-  height: 585px;
-  float: right;
+  /* height: 585px; */
+  /* float: right; */
   line-height: 585px;
+  fill:rgb(118, 118, 118);
+  display:inline-block;
+  width: 24px;
 }
 
 #room-carousel {
-  width:90%;
+  /* width:80%; */
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
