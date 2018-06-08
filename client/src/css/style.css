@@ -260,7 +260,6 @@
   text-align: center;
   line-height: 1;
   position: relative;
-  touch-action: manipulation;
   width: 32px;
   height: 32px;
   box-shadow: none;
@@ -269,21 +268,19 @@
   border-color: rgb(0, 132, 137);
   background: transparent;
   border-width: 1px;
+  outline:none
 }
 
 .plus-minus-btn:active {
-  border-color: rgb(0, 106, 112);
+  box-shadow: rgb(0, 132, 137) 0px 0px 2px 2px;
+  outline: none;
   background: transparent;
 }
+
 .plus-minus-btn:disabled {
   cursor: default;
   border-color: rgba(0, 132, 137, 0.3);
   background: transparent;
-}
-
-.plus-minus-btn:focus {
-  box-shadow: rgb(0, 132, 137) 0px 0px 2px 2px;
-  outline: none;
 }
 
 .modal-text {
