@@ -30,14 +30,14 @@
 .rc-slider-handle {
   position: absolute;
   margin-left: -7px;
-  margin-top: -5px;
-  width: 14px;
-  height: 14px;
+  margin-top: -14px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
   cursor: -webkit-grab;
   cursor: grab;
   border-radius: 50%;
-  border: solid 2px rgb(0, 132, 137);
+  border: solid 1px rgb(0, 132, 137);
   background-color: #fff;
   -ms-touch-action: pan-x;
       touch-action: pan-x;
