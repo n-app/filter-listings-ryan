@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'React';
 import axios from 'axios';
 import RoomListCarousel from './RoomListCarousel.jsx';
 import Modal from './Modal.jsx';
@@ -6,7 +6,6 @@ import PriceSlider from './PriceSlider.jsx';
 import BedroomsCounter from './BedroomsCounter.jsx';
 import '../css/slider.css';
 import '../css/style.css';
-
 
 class App extends React.Component {
   constructor (props) {
@@ -45,7 +44,7 @@ class App extends React.Component {
       isOpen: false,
       currentModalDisplay: null,
       priceLimits: [0,1000],
-      bedMin: 0,
+      bedMin: 1,
     };
 
     this.toggleModal = this.toggleModal.bind(this);
@@ -54,7 +53,8 @@ class App extends React.Component {
     this.onSliderChange = this.onSliderChange.bind(this);
     this.decreaseBedCount = this.decreaseBedCount.bind(this);
     this.increaseBedCount = this.increaseBedCount.bind(this);
-    this.applyFilters = this.applyFilters.bind(this)
+    this.applyFilters = this.applyFilters.bind(this);
+    this.clearFilter = this.clearFilter.bind(this);
   }
 
   // componentDidMount() {
@@ -93,13 +93,13 @@ class App extends React.Component {
 
   //Helper function for BedroomCounter Component
   decreaseBedCount() {
-    if (this.state.bedMin >= 1) {
+    if (this.state.bedMin >= 2) {
       this.setState({
         bedMin: this.state.bedMin - 1,
       })
     } else {
       this.setState({
-        bedMin: 0,
+        bedMin: 1,
       })
     }
   }
@@ -123,10 +123,26 @@ class App extends React.Component {
         filteredList.push(room);
       }
     })
-    this.setState({displayedRooms: filteredList})
+    this.setState({
+      displayedRooms: filteredList,
+      activeIndex:0,
+    })
     this.toggleModal(null)
+  
   }
 
+  //Helper function for all filter components
+  clearFilter(filterType) {
+    if (filterType === 'BedroomsCounter') {
+      this.setState({
+        bedMin: 1,
+      })
+    } else if (filterType === 'PriceSlider') {
+      this.setState({
+        priceLimits: [0,1000],
+      })
+    }
+  }
 
   //Helper function for Carousel Component
   previousSlide() {
@@ -147,10 +163,40 @@ class App extends React.Component {
   }
 
   render() {
+    if (
+      (this.state.isOpen === true && this.state.currentModalDisplay === PriceSlider)
+      || (this.state.priceLimits[0] !== 0 || this.state.priceLimits[1] !== 1000)
+    ) {
+      var priceButtonDisplay = 'filter-on-btn';
+      var priceButtonText = `$${this.state.priceLimits[0]} - $${this.state.priceLimits[1]}`;
+    } else {
+      var priceButtonDisplay = 'main-btn';
+      var priceButtonText = 'Price';
+    }
+
+    if (
+      (this.state.isOpen === true && this.state.currentModalDisplay === BedroomsCounter)
+      || this.state.bedMin !== 1
+    ) {
+      var bedroomsButtonDisplay = 'filter-on-btn';
+      var bedroomsButtonText = `${this.state.bedMin}+ Beds`;
+    } else {
+      var bedroomsButtonDisplay = 'main-btn';
+      var bedroomsButtonText = 'Bedrooms';
+    }
+
     return (
       <div>
-        <button id='price-btn' onClick={() => this.toggleModal(PriceSlider)}>Price</button>
-        <button id='bedrooms-btn' onClick={() => this.toggleModal(BedroomsCounter)}>Bedrooms</button>
+        <div className="menu">
+          <div id="btn-container">
+            <span className="btn-spacer">
+              <button className={priceButtonDisplay} id="price-btn" onClick={() => this.toggleModal(PriceSlider)}>{priceButtonText}</button>
+            </span>
+            <span className="btn-spacer">
+              <button className={bedroomsButtonDisplay} id="bedrooms-btn" onClick={() => this.toggleModal(BedroomsCounter)}>{bedroomsButtonText}</button>
+            </span>
+          </div>
+        </div>
 
         <Modal 
           show = {this.state.isOpen}
@@ -160,12 +206,20 @@ class App extends React.Component {
           decreaseBedCount = {this.decreaseBedCount}
           increaseBedCount = {this.increaseBedCount}
           applyFilters = {this.applyFilters}
+          clearFilter = {this.clearFilter}
           toggleModal = {this.toggleModal}
           currentModalDisplay = {this.state.currentModalDisplay}
           preventClose = {this.stopPropagation}
         />
-        
-        <RoomListCarousel activeIndex={this.state.activeIndex} displayedRooms={this.state.displayedRooms} previousSlide={this.previousSlide} nextSlide={this.nextSlide}/>
+
+        <div className="content">
+          <RoomListCarousel
+            activeIndex={this.state.activeIndex}
+            displayedRooms={this.state.displayedRooms}
+            previousSlide={this.previousSlide}
+            nextSlide={this.nextSlide}
+          />
+        </div>
       </div>
     )
   }
