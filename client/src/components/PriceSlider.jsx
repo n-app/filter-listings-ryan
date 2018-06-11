@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Slider from 'rc-slider';
-const Range = Slider.Range;
+import PropTypes from 'prop-types';
 
-const PriceSlider = (props) => {
+const { Range } = Slider;
+
+function PriceSlider(props) {
   return (
     <div id="slider-content">
       <div className="modal-text">
@@ -23,12 +24,19 @@ const PriceSlider = (props) => {
           Clear
         </button>
       )}
-      
+
       <button className="apply-btn" onClick={props.applyFilters}>
         Apply
       </button>
     </div>
   );
 }
+
+PriceSlider.propTypes = {
+  priceLimits: PropTypes.arrayOf(PropTypes.number).isRequired,
+  onSliderChange: PropTypes.func.isRequired,
+  clearFilter: PropTypes.func.isRequired,
+  applyFilters: PropTypes.func.isRequired,
+};
 
 export default PriceSlider;

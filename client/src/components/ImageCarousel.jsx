@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import ImageGallery from 'react-image-gallery';
+import PropTypes from 'prop-types';
 
-const ImageCarousel = (props) => {
+function ImageCarousel(props) {
   const images = [
     {
       original: props.url,
@@ -10,18 +10,23 @@ const ImageCarousel = (props) => {
     {
       original: 'https://cdn.shopify.com/s/files/1/1422/8040/articles/living_720x720.jpeg?v=1487855775',
     },
-  ]
+  ];
 
   return (
-    <ImageGallery 
-        items={images}
-        showPlayButton={false}
-        showThumbnails={false}
-        showFullscreenButton={false}
-        showBullets={true}
-
-      />
+    <ImageGallery
+      items={images}
+      showPlayButton={false}
+      showThumbnails={false}
+      showFullscreenButton={false}
+      showBullets
+    />
   );
 }
+
+
+ImageCarousel.propTypes = {
+  url: PropTypes.string.isRequired,
+};
+
 
 export default ImageCarousel;
