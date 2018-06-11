@@ -23,7 +23,17 @@ function RoomListEntry(props) {
 }
 
 RoomListEntry.propTypes = {
-  room: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  room: PropTypes.shape({
+    id: PropTypes.number,
+    roomname: PropTypes.string,
+    price: PropTypes.number,
+    numberOfBedrooms: PropTypes.number,
+    rating: PropTypes.number,
+    numberOfReviews: PropTypes.number,
+    urlToImage: PropTypes.string,
+    roomType: PropTypes.string,
+    instantBook: PropTypes.string,
+  }).isRequired,
   activeIndex: PropTypes.number.isRequired,
 };
 
