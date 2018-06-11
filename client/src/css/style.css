@@ -64,6 +64,13 @@ body {
 
   margin:0 auto;
   height:585px;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+
 }
 
 #carousel {
@@ -101,14 +108,14 @@ body {
   box-sizing: border-box;
 }
 
-.inline-block {
+/* .inline-block {
   display:inline-block;
   width:24px;
   height:650px;
   vertical-align:middle;
   box-sizing: border-box;
   margin:0px;
-}
+} */
 
 .center {
   text-align: center;
@@ -138,6 +145,26 @@ body {
   display: block;
 }
 
+
+.btn-spacer {
+  padding-left: 6px;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+}
+
+/* #btn-container {
+  padding-top: 16px ;
+  padding-right: 72px ;
+  padding-bottom: 16px ;
+  padding-left: 72px
+} */
+
+
 .menu {
   background: rgb(255, 255, 255);
   position: fixed;
@@ -145,19 +172,13 @@ body {
   border: 1px solid rgb(219, 219, 219);
   height: 65px;
   box-sizing: border-box;
-  display:block;
-}
-
-#btn-container {
-  padding-top: 16px ;
-  padding-right: 72px ;
-  padding-bottom: 16px ;
-  padding-left: 72px
-}
-
-.btn-spacer {
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 72px;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
 }
 
 .content {
