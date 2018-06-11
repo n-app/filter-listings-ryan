@@ -340,7 +340,7 @@ class App extends React.Component {
 
     // Rendering conditions for Instant Book Button
     if (
-      (this.state.isOpen === true && this.state.currentModalDisplay === PriceSlider)
+      (this.state.isOpen === true && this.state.currentModalDisplay === InstantBookSelector)
       || (this.state.instantBook === true)
     ) {
       var instantBookButtonDisplay = 'filter-on-btn';
