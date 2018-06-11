@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import RoomListEntry from './RoomListEntry.jsx';
 import RoomListCarouselArrow from './RoomListCarouselArrow.jsx'
 

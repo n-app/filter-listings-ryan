@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import Slider from 'rc-slider';
 const Range = Slider.Range;
@@ -19,7 +19,7 @@ const PriceSlider = (props) => {
         />
       </div>
       {props.priceLimits[0] === 0 && props.priceLimits[1] === 1000 ? null : (
-        <button className="clear-btn" onClick={()=>props.clearFilter('PriceSlider')}>
+        <button className="clear-btn" name="PriceSlider" onClick={props.clearFilter}>
           Clear
         </button>
       )}

@@ -25,7 +25,7 @@ body {
   padding-bottom: 0px ;
   color: rgb(72, 72, 72) ;
   font-weight: 800 ;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-left: auto;
   margin-right: auto;
 }
@@ -104,7 +104,7 @@ body {
 .inline-block {
   display:inline-block;
   width:24px;
-  height:610px;
+  height:650px;
   vertical-align:middle;
   box-sizing: border-box;
   margin:0px;
@@ -131,10 +131,11 @@ body {
   box-sizing: border-box;
 }
 
-.roomEntryImg {
+.room-entry-img {
   width: 100%;
-  height: 203px;
-  display: inline-block;
+  height:100%;
+  /* height: 203px; */
+  display: block;
 }
 
 .menu {
@@ -170,7 +171,7 @@ body {
 
 .modal-overlay-div {
     position: fixed;
-    top: 0;
+    top: 65px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -194,7 +195,7 @@ body {
 
 .modal-content-div {
   position: absolute;
-  top: 65px;
+  top: 0px;
   left: 0px;
   z-index: 10;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 14px 36px 2px;
@@ -249,6 +250,93 @@ body {
   display:inline-block;
 }
 
+#home-type-selector-content {
+  width: 425px;
+  height: 275px;
+  padding:24px
+}
+
+.checkbox-text {
+  display:inline-block;
+  padding: 15px;
+  padding-left:18px;
+  
+}
+
+.checkbox {
+  -webkit-appearance: none;
+	background-color: #fafafa;
+	border: 1px solid #cacece;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 9px;
+	border-radius: 3px;
+	display: inline-block;
+  position: relative;
+}
+
+.checkbox:active, .checkbox:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.checkbox:focus {
+  outline:0;
+  border: 1px solid rgb(0, 132, 137);
+}
+
+.checkbox:checked {
+	background-color: rgb(0, 132, 137);
+	border: 1px solid rgb(0, 132, 137);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+
+.checkbox:checked:after {
+	content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	color: white;
+}
+
+.home-type-main-text {
+  font-weight: normal;
+  cursor: pointer;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgb(72, 72, 72);
+  display: inline-block;
+  position: relative;
+  top: -3px;
+  vertical-align: top;
+}
+
+.sub-text {
+  font-weight: normal;
+  cursor: pointer;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: normal;
+  padding-top: 4px;
+  padding-bottom: 0px;
+  color: rgb(72, 72, 72);
+  display: block;
+}
+
+.instant-book-selector-content {
+  width: 500px;
+  height: 100px;
+  padding:24px
+}
+
+#instant-book-text {
+  display:inline-block;
+}
+#instant-book-toggle {
+  float:right
+}
 .main-btn {
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-size: 14px;
@@ -403,4 +491,63 @@ body {
   color: rgb(72, 72, 72);
   font-weight: normal;
   margin: 0px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The toggle */
+.toggle {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.toggle:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .toggle {
+  background-color: rgb(0, 132, 137);
+}
+
+input:focus + .toggle {
+  box-shadow: 0 0 1px rgb(0, 132, 137);
+}
+
+input:checked + .toggle:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Rounded toggle */
+.toggle.round {
+  border-radius: 34px;
+}
+
+.toggle.round:before {
+  border-radius: 50%;
 }

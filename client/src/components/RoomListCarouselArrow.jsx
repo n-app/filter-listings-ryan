@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 
 const RoomListCarouselArrow = (props) => (
   <div className="inline-block" onClick={props.clickFunction} >

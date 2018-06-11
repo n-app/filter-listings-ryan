@@ -45,30 +45,35 @@ const loremIpsum = [
   "Lectus", "Elementum", "Tempor", "Risus", "Cras"
 ];
 
+const roomTypes = ['Entire House', 'Entire Apartment', 'Entire Guest Suite', 'Entire Guest House', 'Private Room', 'Shared Room'];
 
-const getNameForAllEntries = (words, numberOfEntries) => {
+const trueFalse = ['T','F'];
+
+const getWordsForAllEntries = (words, numberOfEntries,maxNumberOfWordsInOutput) => {
   let allWords = [];
   for (let i = 0; i < numberOfEntries; i++) {
     let numberOfRandomWords = words.length;
-    let numberOfWordsInName = getRandomInteger(1, 3)
-    let nameOfRoom = [];
+    let numberOfWordsInName = getRandomInteger(1, maxNumberOfWordsInOutput)
+    let outputWords = [];
     for (let j = 0; j < numberOfWordsInName; j++) {
-      nameOfRoom.push(words[getRandomInteger(0, numberOfRandomWords)])
+      outputWords.push(words[getRandomInteger(0, numberOfRandomWords -1)])
     }
-    nameOfRoom = nameOfRoom.join(' ')
-    allWords.push(nameOfRoom);
+    outputWords = outputWords.join(' ')
+    allWords.push(outputWords);
   }
   return allWords;
 }
 
-const allRoomNames = getNameForAllEntries(loremIpsum, 600);
+const allRoomNames = getWordsForAllEntries(loremIpsum, 600, 3);
 const allPrices = getNumberForAllEntries(50, 750, 600);
 const allNumberOfRooms = getNumberForAllEntries(1, 7, 600);
 const allRatings = getNumberForAllEntries(1, 5, 600);
 const allNumberOfReviews = getNumberForAllEntries(0, 500, 600);
 const allUrls = getRoomPicUrl(600);
+const allRoomTypes = getWordsForAllEntries(roomTypes, 600, 1)
+const allInstantBooks = getWordsForAllEntries(trueFalse, 600, 1)
 
-const columnData = [allRoomNames, allPrices, allNumberOfRooms, allRatings, allNumberOfReviews, allUrls]
+const columnData = [allRoomNames, allPrices, allNumberOfRooms, allRatings, allNumberOfReviews, allUrls, allRoomTypes, allInstantBooks]
 
 const createRecords = (columns) => {
   let records = [];
