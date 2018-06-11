@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function RoomListCarouselArrow(props) {
   return (
-    <div className="inline-block" onClick={props.clickFunction} >
+    <div onClick={props.clickFunction} >
       <svg className={`slide-arrow ${props.direction}`} viewBox="0 0 18 18" role="img">
         {props.arrow}
       </svg>

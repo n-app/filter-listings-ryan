@@ -59,9 +59,8 @@ body {
 }
 
 .carousel-content {
-  width: 80%;
+  width: 90%;
   padding-top:25px;
-
   margin:0 auto;
   height:585px;
   display:flex;
@@ -76,46 +75,29 @@ body {
 #carousel {
   display:inline-block;
   box-sizing: border-box;
-  width:95%;
+  width:90%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .left {
   text-align: center;
-  /* height: 585px; */
-  /* line-height: 585px; */
   fill:rgb(118, 118, 118);
   display:block;
-  /* width: 5%; */
   height:24px;
   box-sizing: border-box;
   width:24px;
-  /* float: left; */
   align-content: center;
 }
 
 .right {
   text-align: center;
-  /* height: 585px; */
-  /* float: right; */
-  /* line-height: 585px; */
   fill:rgb(118, 118, 118);
   display:block;
-  /* width: 5%; */
   height:24px;
   width:24px;
   box-sizing: border-box;
 }
-
-/* .inline-block {
-  display:inline-block;
-  width:24px;
-  height:650px;
-  vertical-align:middle;
-  box-sizing: border-box;
-  margin:0px;
-} */
 
 .center {
   text-align: center;
@@ -132,6 +114,7 @@ body {
 
 .image-slide {
   display: inline-block;
+  min-width: 33.33%;
   width: 33.33%;
   height: 100%;
   padding:10px;
@@ -156,14 +139,6 @@ body {
   align-items: center;
   align-content: center;
 }
-
-/* #btn-container {
-  padding-top: 16px ;
-  padding-right: 72px ;
-  padding-bottom: 16px ;
-  padding-left: 72px
-} */
-
 
 .menu {
   background: rgb(255, 255, 255);
