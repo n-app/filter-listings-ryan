@@ -354,13 +354,14 @@ class App extends React.Component {
     }
 
     // Rendering conditions for Home Type Button
-    if (this.state.isOpen === true && this.state.currentModalDisplay === HomeTypeSelector) {
-      if (this.state.roomTypeIsSelected === false) {
-        var homeTypeButtonDisplay = 'filter-on-btn';
-        var homeTypeButtonText = 'Home Type';
-      }
-    }
-    if (this.state.roomTypeIsSelected === true) {
+    if (
+      this.state.isOpen === true
+      && this.state.currentModalDisplay === HomeTypeSelector
+      && this.state.roomTypeIsSelected === false
+    ) {
+      var homeTypeButtonDisplay = 'filter-on-btn';
+      var homeTypeButtonText = 'Home Type';
+    } else if (this.state.roomTypeIsSelected === true) {
       var roomTypes = {
         entirePlace: 'Entire Place', 
         privateRoom: 'Private Room',
