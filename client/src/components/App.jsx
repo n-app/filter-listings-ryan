@@ -21,13 +21,13 @@ class App extends React.Component {
       allRooms:
       [
         {
+          id: 1, roomname: 'massa volupat', price: 570, numberOfBedrooms: 4, rating: 4, numberOfReviews: 120, urlToImage: 'https://cdn.shopify.com/s/files/1/1422/8040/articles/living_720x720.jpeg?v=1487855775', roomType: 'Private Room', instantBook: 'T',
+        },
+        {
           id: 2, roomname: 'pellentesque', price: 663, numberOfBedrooms: 4, rating: 2, numberOfReviews: 148, urlToImage: 'https://atmedia.imgix.net/030616f993aec78588e203c922d8036913101c27?auto=format&q=45&w=640.0&h=430.0&fit=max&cs=strip', roomType: 'Entire Guest Suite', instantBook: 'T',
         },
         {
           id: 3, roomname: 'sodales cras', price: 80, numberOfBedrooms: 6, rating: 4, numberOfReviews: 105, urlToImage: 'https://atmedia.imgix.net/b02fd1a636654d7bbc01a595acf762c4c89864df?q=45&auto=format&cs=strip&usm=&h=308&fit=max', roomType: 'Entire House', instantBook: 'F',
-        },
-        {
-          id: 3, roomname: 'sodales cras', price: 80, numberOfBedrooms: 6, rating: 4, numberOfReviews: 105, urlToImage: 'https://cdn.shopify.com/s/files/1/1422/8040/articles/living_720x720.jpeg?v=1487855775', roomType: 'Entire House', instantBook: 'T',
         },
         {
           id: 4, roomname: 'praesent', price: 684, numberOfBedrooms: 4, rating: 3, numberOfReviews: 285, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSly2BsH0Jw3x_VROnUcDkSm7OXmlHzz3If0PL-tZfHpdfS1SbLjA', roomType: 'Shared Room', instantBook: 'F',
@@ -60,13 +60,13 @@ class App extends React.Component {
       displayedRooms:
       [
         {
+          id: 1, roomname: 'massa volupat', price: 570, numberOfBedrooms: 4, rating: 4, numberOfReviews: 120, urlToImage: 'https://cdn.shopify.com/s/files/1/1422/8040/articles/living_720x720.jpeg?v=1487855775', roomType: 'Private Room', instantBook: 'T',
+        },
+        {
           id: 2, roomname: 'pellentesque', price: 663, numberOfBedrooms: 4, rating: 2, numberOfReviews: 148, urlToImage: 'https://atmedia.imgix.net/030616f993aec78588e203c922d8036913101c27?auto=format&q=45&w=640.0&h=430.0&fit=max&cs=strip', roomType: 'Entire Guest Suite', instantBook: 'T',
         },
         {
           id: 3, roomname: 'sodales cras', price: 80, numberOfBedrooms: 6, rating: 4, numberOfReviews: 105, urlToImage: 'https://atmedia.imgix.net/b02fd1a636654d7bbc01a595acf762c4c89864df?q=45&auto=format&cs=strip&usm=&h=308&fit=max', roomType: 'Entire House', instantBook: 'F',
-        },
-        {
-          id: 3, roomname: 'sodales cras', price: 80, numberOfBedrooms: 6, rating: 4, numberOfReviews: 105, urlToImage: 'https://cdn.shopify.com/s/files/1/1422/8040/articles/living_720x720.jpeg?v=1487855775', roomType: 'Entire House', instantBook: 'T',
         },
         {
           id: 4, roomname: 'praesent', price: 684, numberOfBedrooms: 4, rating: 3, numberOfReviews: 285, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSly2BsH0Jw3x_VROnUcDkSm7OXmlHzz3If0PL-tZfHpdfS1SbLjA', roomType: 'Shared Room', instantBook: 'F',
@@ -96,6 +96,44 @@ class App extends React.Component {
           id: 12, roomname: 'tempus torquent praesent', price: 679, numberOfBedrooms: 1, rating: 3, numberOfReviews: 440, urlToImage: 'https://doormandesigns.com/wp-content/uploads/2016/10/alex-gernier-apartment-therapy-doorman-designs-2.jpg', roomType: 'Entire House', instantBook: 'T',
         },
       ],
+      allImages: [
+        {
+          id: 1, roomId: 1, urlToImage: 'https://cdn.shopify.com/s/files/1/1422/8040/articles/living_720x720.jpeg?v=1487855775',
+        },
+        {
+          id: 2, roomId: 2, urlToImage: 'https://atmedia.imgix.net/030616f993aec78588e203c922d8036913101c27?auto=format&q=45&w=640.0&h=430.0&fit=max&cs=strip',
+        },
+        {
+          id: 3, roomId: 3, urlToImage: 'https://atmedia.imgix.net/b02fd1a636654d7bbc01a595acf762c4c89864df?q=45&auto=format&cs=strip&usm=&h=308&fit=max',
+        },
+        {
+          id: 4, roomId: 4, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSly2BsH0Jw3x_VROnUcDkSm7OXmlHzz3If0PL-tZfHpdfS1SbLjA',
+        },
+        {
+          id: 5, roomId: 5, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8qM_0pexE_9G4mc5fGCmcLco8mZC_892q7P68MDhAqIsQsDHyvw',
+        },
+        {
+          id: 6, roomId: 6, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KkjsLHboprlM-Etmob75zdCRhtXbHGop2FQ9ldNxjXRn8-pN8g',
+        },
+        {
+          id: 1, roomId: 1, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Xujs-rutVHuP9psB4eq_46RVcgQmVHS9O8RH9XciUK8hVC6d',
+        },
+        {
+          id: 2, roomId: 2, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_843qjUkImjm7CdlS7HUZft8gaiwmZtnuxBamCXNCctDbtGrJcA',
+        },
+        {
+          id: 3, roomId: 3, urlToImage: 'https://i.pinimg.com/originals/66/ed/a1/66eda146d5b35c52abeae178a1b82958.jpg',
+        },
+        {
+          id: 4, roomId: 4, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO3P3FqmwF9RiGE6wZvnm47yNW0Y3zKZ_7jfRvomHA9m9KIdXS',
+        },
+        {
+          id: 5, roomId: 5, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF8ODMs1mKu5T6ZNQYIyr4gXDfXhoHjgpQFL30Z_0a0Omq8VQ4',
+        },
+        {
+          id: 6, roomId: 6, urlToImage: 'https://doormandesigns.com/wp-content/uploads/2016/10/alex-gernier-apartment-therapy-doorman-designs-2.jpg',
+        },
+      ],
       activeIndex: 0,
       isOpen: false,
       currentModalDisplay: null,
@@ -118,23 +156,34 @@ class App extends React.Component {
     this.clearFilter = this.clearFilter.bind(this);
     this.toggleHomeType = this.toggleHomeType.bind(this);
     this.toggleInstantBook = this.toggleInstantBook.bind(this);
+    this.setDisplayedRooms = this.setDisplayedRooms.bind(this);
   }
 
   // =======WILL UNCOMMENT BELOW LATER---USING MOCK DATA DURING DEVELOPMENT======
 
-  // componentDidMount() {
-  //   this.fetch('/getRooms');
-  // }
+  componentDidMount() {
+    this.fetch('/getRooms', 'allRooms');
+    this.fetch('/getImages', 'allImages');
+    this.setDisplayedRooms(this.state.allRooms);
+  }
 
-  // fetch(endpoint) {
-  //   axios.get(endpoint)
-  //     .then((response) => {
-  //       this.setState({allRooms: response.data})
-  //     })
-  //     .catch((err) => {
-  //       throw err;
-  //     });
-  // }
+  fetch(endpoint, key) {
+    axios.get(endpoint)
+      .then((response) => {
+        this.setState({ [key]: response.data });
+      })
+      .catch((err) => {
+        throw err;
+      });
+  }
+
+  setDisplayedRooms(rooms) {
+    if (rooms.length > 24) {
+      this.setState({ displayedRooms: rooms.slice(0, 25) });
+    } else {
+      this.setState({ displayedRooms: rooms });
+    }
+  }
 
   // Helper function for PriceSlider Component
   onSliderChange(value) {
@@ -207,8 +256,8 @@ class App extends React.Component {
         filteredList.push(room);
       }
     });
+    this.setDisplayedRooms(filteredList);
     this.setState({
-      displayedRooms: filteredList,
       activeIndex: 0,
     });
     this.toggleModal(null);
@@ -239,17 +288,17 @@ class App extends React.Component {
   }
 
   // Helper function for Carousel Component
-  previousSlide() {
+  previousSlide(numberOfEntriesInCarousel) {
     if (this.state.activeIndex > 0) {
       this.setState({ activeIndex: this.state.activeIndex - 1 });
     } else {
-      this.setState({ activeIndex: 3 });
+      this.setState({ activeIndex: numberOfEntriesInCarousel - 3 });
     }
   }
 
   // Helper function for Carousel Component
-  nextSlide() {
-    if (this.state.activeIndex < 3) {
+  nextSlide(numberOfEntriesInCarousel) {
+    if (this.state.activeIndex < numberOfEntriesInCarousel - 3) {
       this.setState({ activeIndex: this.state.activeIndex + 1 });
     } else {
       this.setState({ activeIndex: 0 });
@@ -340,7 +389,7 @@ class App extends React.Component {
 
     // Rendering conditions for Instant Book Button
     if (
-      (this.state.isOpen === true && this.state.currentModalDisplay === PriceSlider)
+      (this.state.isOpen === true && this.state.currentModalDisplay === InstantBookSelector)
       || (this.state.instantBook === true)
     ) {
       var instantBookButtonDisplay = 'filter-on-btn';
@@ -352,20 +401,18 @@ class App extends React.Component {
     return (
       <div>
         <div className="menu">
-          <div id="btn-container">
-            <span className="btn-spacer">
-              <button className={priceButtonDisplay} id="price-btn" onClick={() => this.toggleModal(PriceSlider)}>{priceButtonText}</button>
-            </span>
-            <span className="btn-spacer">
-              <button className={bedroomsButtonDisplay} id="bedrooms-btn" onClick={() => this.toggleModal(BedroomsCounter)}>{bedroomsButtonText}</button>
-            </span>
-            <span className="btn-spacer">
-              <button className={homeTypeButtonDisplay} id="home-type-btn" onClick={() => this.toggleModal(HomeTypeSelector)}>{homeTypeButtonText}</button>
-            </span>
-            <span className="btn-spacer">
-              <button className={instantBookButtonDisplay} id="instant-book-btn" onClick={() => this.toggleModal(InstantBookSelector)}>Instant Book</button>
-            </span>
-          </div>
+          <span className="btn-spacer">
+            <button className={priceButtonDisplay} id="price-btn" onClick={() => this.toggleModal(PriceSlider)}>{priceButtonText}</button>
+          </span>
+          <span className="btn-spacer">
+            <button className={bedroomsButtonDisplay} id="bedrooms-btn" onClick={() => this.toggleModal(BedroomsCounter)}>{bedroomsButtonText}</button>
+          </span>
+          <span className="btn-spacer">
+            <button className={homeTypeButtonDisplay} id="home-type-btn" onClick={() => this.toggleModal(HomeTypeSelector)}>{homeTypeButtonText}</button>
+          </span>
+          <span className="btn-spacer">
+            <button className={instantBookButtonDisplay} id="instant-book-btn" onClick={() => this.toggleModal(InstantBookSelector)}>Instant Book</button>
+          </span>
         </div>
 
         <Modal
@@ -392,6 +439,7 @@ class App extends React.Component {
           <RoomListCarousel
             activeIndex={this.state.activeIndex}
             displayedRooms={this.state.displayedRooms}
+            allImages={this.state.allImages}
             previousSlide={this.previousSlide}
             nextSlide={this.nextSlide}
           />

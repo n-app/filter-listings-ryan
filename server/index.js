@@ -12,5 +12,9 @@ app.listen(3004, () => {
 });
 
 app.get('/getRooms', (req, res) => {
-  db.getAllRecords(res.send.bind(res));
+  db.getAllRoomlistRecords(res.send.bind(res));
+});
+
+app.get('/getImages/', (req, res) => {
+  db.getAllImagesRecords(res.send.bind(res));
 });

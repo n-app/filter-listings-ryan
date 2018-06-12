@@ -59,55 +59,51 @@ body {
 }
 
 .carousel-content {
-  width: 80%;
+  width: 90%;
   padding-top:25px;
-
   margin:0 auto;
-  height:585px;
+  /* height:590px; */
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  align-content: center;
+
 }
 
 #carousel {
   display:inline-block;
   box-sizing: border-box;
-  width:95%;
+  width:90%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .left {
   text-align: center;
-  /* height: 585px; */
-  /* line-height: 585px; */
   fill:rgb(118, 118, 118);
-  display:block;
-  /* width: 5%; */
+  display:flex;
   height:24px;
   box-sizing: border-box;
   width:24px;
-  /* float: left; */
-  align-content: center;
+  
+  
+}
+
+.flex-center{
+  display: flex;
+  align-self: center;
 }
 
 .right {
   text-align: center;
-  /* height: 585px; */
-  /* float: right; */
-  /* line-height: 585px; */
   fill:rgb(118, 118, 118);
-  display:block;
-  /* width: 5%; */
+  display:flex;
   height:24px;
   width:24px;
   box-sizing: border-box;
-}
-
-.inline-block {
-  display:inline-block;
-  width:24px;
-  height:650px;
-  vertical-align:middle;
-  box-sizing: border-box;
-  margin:0px;
+  
 }
 
 .center {
@@ -125,6 +121,7 @@ body {
 
 .image-slide {
   display: inline-block;
+  min-width: 33.33%;
   width: 33.33%;
   height: 100%;
   padding:10px;
@@ -138,6 +135,18 @@ body {
   display: block;
 }
 
+
+.btn-spacer {
+  padding-left: 6px;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+}
+
 .menu {
   background: rgb(255, 255, 255);
   position: fixed;
@@ -145,19 +154,13 @@ body {
   border: 1px solid rgb(219, 219, 219);
   height: 65px;
   box-sizing: border-box;
-  display:block;
-}
-
-#btn-container {
-  padding-top: 16px ;
-  padding-right: 72px ;
-  padding-bottom: 16px ;
-  padding-left: 72px
-}
-
-.btn-spacer {
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 72px;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
 }
 
 .content {
@@ -214,17 +217,16 @@ body {
 }
 
 .modal-dialog-div {
-    position: relative;
-    outline: 0;
-    /* width: 500px;
-    height: 400px; */
-    display: inline-block;
-    vertical-align: middle;
-    box-sizing: border-box;
-    max-width: auto;
-    border-radius: 4px;
-    background-color: white;
-
+  position: relative;
+  outline: 0;
+  /* width: 500px;
+  height: 400px; */
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  max-width: auto;
+  border-radius: 4px;
+  background-color: white;
 }
 
 #slider-content {

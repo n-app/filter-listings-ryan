@@ -62,14 +62,15 @@ const getWordsForAllEntries = (words, numberOfEntries, maxNumberOfWordsInOutput)
   return allWords;
 };
 
-const allRoomNames = getWordsForAllEntries(loremIpsum, 600, 3);
-const allPrices = getNumberForAllEntries(50, 750, 600);
-const allNumberOfRooms = getNumberForAllEntries(1, 7, 600);
-const allRatings = getNumberForAllEntries(1, 5, 600);
-const allNumberOfReviews = getNumberForAllEntries(0, 500, 600);
+const allRoomNames = getWordsForAllEntries(loremIpsum, 200, 3);
+const allPrices = getNumberForAllEntries(50, 750, 200);
+const allNumberOfRooms = getNumberForAllEntries(1, 7, 200);
+const allRatings = getNumberForAllEntries(1, 5, 200);
+const allNumberOfReviews = getNumberForAllEntries(0, 500, 200);
+const allRoomTypes = getWordsForAllEntries(roomTypes, 200, 1);
+const allInstantBooks = getWordsForAllEntries(trueFalse, 200, 1);
+
 const allUrls = getRoomPicUrl(600);
-const allRoomTypes = getWordsForAllEntries(roomTypes, 600, 1);
-const allInstantBooks = getWordsForAllEntries(trueFalse, 600, 1);
 
 const columnData = [
   allRoomNames,
@@ -77,12 +78,11 @@ const columnData = [
   allNumberOfRooms,
   allRatings,
   allNumberOfReviews,
-  allUrls,
   allRoomTypes,
   allInstantBooks,
 ];
 
-const createRecords = (columns) => {
+const createRoomlistRecords = (columns) => {
   const records = [];
   for (let i = 0; i < columns[0].length; i++) {
     const record = [];
@@ -94,6 +94,23 @@ const createRecords = (columns) => {
   return records;
 };
 
-const allRecords = createRecords(columnData);
+const createImagesRecords = (numberOfEntries, numberOfPicturesPerListing, urls) => {
+  const records = [];
+  let urlNumber = 0;
+  for (let i = 1; i <= numberOfEntries; i++) {
+    for (let j = 0; j < numberOfPicturesPerListing; j++) {
+      const record = [];
+      record.push(urls[urlNumber]);
+      urlNumber += 1;
+      record.push(i);
+      records.push(record);
+    }
+  }
+  return records;
+};
 
-db.insertRecords(allRecords);
+const allRoomlistRecords = createRoomlistRecords(columnData);
+const allImagesRecords = createImagesRecords(200, 3, allUrls);
+
+db.insertRoomlistRecords(allRoomlistRecords);
+db.insertImagesRecords(allImagesRecords);

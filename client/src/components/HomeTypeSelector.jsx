@@ -40,7 +40,8 @@ function HomeTypeSelector(props) {
         </div>
       </div>
 
-      {(props.entirePlace === false
+      {(
+        props.entirePlace === false
         && props.privateRoom === false
         && props.sharedRoom === false
       ) ? null : (

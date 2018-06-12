@@ -14,12 +14,23 @@ connection.connect((err) => {
   console.log('Connection to database established');
 });
 
-const insertRecords = (data) => {
-  connection.query('INSERT INTO roomlist (roomname, price, numberOfBedrooms, rating, numberOfReviews, urlToImage, roomType, instantBook) VALUES ?', [data]);
+const insertRoomlistRecords = (data) => {
+  connection.query('INSERT INTO roomlist (roomname, price, numberOfBedrooms, rating, numberOfReviews, roomType, instantBook) VALUES ?', [data]);
 };
 
-const getAllRecords = (sendCallback) => {
+const insertImagesRecords = (data) => {
+  connection.query('INSERT INTO images (urlToImage, roomId) VALUES ?', [data]);
+};
+
+const getAllRoomlistRecords = (sendCallback) => {
   connection.query('SELECT * FROM roomlist', (err, result) => {
+    if (err) console.log(err);
+    sendCallback(result);
+  });
+};
+
+const getAllImagesRecords = (sendCallback) => {
+  connection.query('SELECT * FROM images', (err, result) => {
     if (err) console.log(err);
     sendCallback(result);
   });
@@ -27,6 +38,8 @@ const getAllRecords = (sendCallback) => {
 
 module.exports = {
   connection,
-  insertRecords,
-  getAllRecords,
+  insertRoomlistRecords,
+  insertImagesRecords,
+  getAllRoomlistRecords,
+  getAllImagesRecords,
 };

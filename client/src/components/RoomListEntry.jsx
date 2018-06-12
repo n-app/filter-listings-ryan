@@ -11,7 +11,7 @@ function RoomListEntry(props) {
   return (
     <div className="image-slide" style={slideStyle}>
       <div className="room-entry-img">
-        <ImageCarousel url={props.room.urlToImage} />
+        <ImageCarousel roomImages={props.roomImages[props.room.id]} />
       </div>
       <div className="bedroomNum">{props.room.roomType} • {props.room.numberOfBedrooms} {props.room.numberOfBedrooms === 1 ? 'Bed' : 'Beds'}</div>
       <div className="roomName">{props.room.roomname}</div>
@@ -35,6 +35,7 @@ RoomListEntry.propTypes = {
     instantBook: PropTypes.string,
   }).isRequired,
   activeIndex: PropTypes.number.isRequired,
+  roomImages: PropTypes.shape({}).isRequired,
 };
 
 export default RoomListEntry;
