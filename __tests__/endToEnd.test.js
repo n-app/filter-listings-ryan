@@ -34,6 +34,13 @@ describe('Bedroom Count Component', () => {
     expect(bedroomCount).toEqual('1+');
   });
 
+  test('Clicking Bedrooms button opens bedroom count modal and sets the button class to ', async () => {
+    await page.click('#bedrooms-btn');
+    await page.waitForSelector('#bed-count');
+    const bedroomCount = await page.$eval('#bed-count', e => e.textContent);
+    expect(bedroomCount).toEqual('1+');
+  });
+
   test('Clicking the Plus and Minus buttons change the bed count correctly', async () => {
     await page.click('#bedrooms-btn');
     await page.waitForSelector('#bed-count');
@@ -64,5 +71,27 @@ describe('Price Slider Component', () => {
   test('Button to open price slider intially says "Price"', async () => {
     const buttonText = await page.$eval('#price-btn', e => e.textContent);
     expect(buttonText).toEqual('Price');
+  });
+});
+
+describe('Home Type Component', () => {
+  beforeEach(async () => {
+    await page.goto(pageUrl, { waitUntil: 'networkidle2' });
+  });
+
+  test('Button to open home type selector intially says "Home Type"', async () => {
+    const buttonText = await page.$eval('#home-type-btn', e => e.textContent);
+    expect(buttonText).toEqual('Home Type');
+  });
+});
+
+describe('Instant Book Component', () => {
+  beforeEach(async () => {
+    await page.goto(pageUrl, { waitUntil: 'networkidle2' });
+  });
+
+  test('Button to open instant book selector intially says "Instant Book"', async () => {
+    const buttonText = await page.$eval('#instant-book-btn', e => e.textContent);
+    expect(buttonText).toEqual('Instant Book');
   });
 });

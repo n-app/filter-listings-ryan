@@ -178,11 +178,7 @@ class App extends React.Component {
   // }
 
   setDisplayedRooms(rooms) {
-    if (rooms.length > 24) {
-      this.setState({ displayedRooms: rooms.slice(0, 25) });
-    } else {
-      this.setState({ displayedRooms: rooms });
-    }
+    this.setState({ displayedRooms: rooms.slice(0, 25) });
   }
 
   // Helper function for PriceSlider Component

@@ -2,7 +2,6 @@ import React from 'react';
 import Slider from 'rc-slider';
 import PropTypes from 'prop-types';
 
-
 const { Range } = Slider;
 
 function PriceSlider(props) {

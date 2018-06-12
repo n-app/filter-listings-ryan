@@ -356,6 +356,7 @@ body {
   text-align: center;
   text-decoration: none;
   width: auto;
+  outline: none;
 }
 
 .main-btn:hover {
@@ -385,6 +386,7 @@ body {
   border-style: solid;
   border-color: rgb(0, 132, 137);
   border-image: initial;
+  outline: none;
 }
 
 .filter-btn:hover {

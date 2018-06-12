@@ -15,7 +15,7 @@ function RoomListCarousel(props) {
   });
 
   props.allImages.forEach((image) => {
-    if (roomImages.hasOwnProperty(image.roomId)) {
+    if (roomImages[image.roomId]) {
       roomImages[image.roomId].push(image.urlToImage);
     }
   });
