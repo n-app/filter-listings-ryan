@@ -8,7 +8,7 @@ function BedroomsCounter(props) {
         <span>Beds</span>
 
         <div className="plus-minus-content">
-          <button className="plus-minus-btn" disabled={props.bedMin === 1 ? true:false} id="decrease-btn" onClick={props.decreaseBedCount}>-</button>
+          <button className="plus-minus-btn" disabled={props.bedMin === 1} id="decrease-btn" onClick={props.decreaseBedCount}>-</button>
           <span id="bed-count">{props.bedMin}+</span>
           <button className="plus-minus-btn" id="increase-btn" onClick={props.increaseBedCount}>+</button>
         </div>

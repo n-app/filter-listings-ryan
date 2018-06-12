@@ -19,7 +19,6 @@ function ImageCarousel(props) {
   );
 }
 
-
 ImageCarousel.propTypes = {
   roomImages: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

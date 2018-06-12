@@ -35,7 +35,7 @@ RoomListEntry.propTypes = {
     instantBook: PropTypes.string,
   }).isRequired,
   activeIndex: PropTypes.number.isRequired,
-  
+  roomImages: PropTypes.shape({}).isRequired,
 };
 
 export default RoomListEntry;

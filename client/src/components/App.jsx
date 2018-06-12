@@ -38,24 +38,24 @@ class App extends React.Component {
         {
           id: 6, roomname: 'ac cras', price: 136, numberOfBedrooms: 7, rating: 3, numberOfReviews: 201, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KkjsLHboprlM-Etmob75zdCRhtXbHGop2FQ9ldNxjXRn8-pN8g', roomType: 'Entire Apartment', instantBook: 'F',
         },
-        // {
-        //   id: 7, roomname: 'pharetra congue', price: 348, numberOfBedrooms: 3, rating: 5, numberOfReviews: 211, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Xujs-rutVHuP9psB4eq_46RVcgQmVHS9O8RH9XciUK8hVC6d', roomType: 'Entire Guest Suite', instantBook: 'T',
-        // },
-        // {
-        //   id: 8, roomname: 'class', price: 594, numberOfBedrooms: 4, rating: 2, numberOfReviews: 212, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_843qjUkImjm7CdlS7HUZft8gaiwmZtnuxBamCXNCctDbtGrJcA', roomType: 'Entire Guest House', instantBook: 'F',
-        // },
-        // {
-        //   id: 9, roomname: 'volutpat aptent iaculis', price: 180, numberOfBedrooms: 7, rating: 1, numberOfReviews: 358, urlToImage: 'https://i.pinimg.com/originals/66/ed/a1/66eda146d5b35c52abeae178a1b82958.jpg', roomType: 'Private Room', instantBook: 'F',
-        // },
-        // {
-        //   id: 10, roomname: 'pulvinar lacus accumsan', price: 480, numberOfBedrooms: 4, rating: 3, numberOfReviews: 201, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO3P3FqmwF9RiGE6wZvnm47yNW0Y3zKZ_7jfRvomHA9m9KIdXS', roomType: 'Shared Room', instantBook: 'T',
-        // },
-        // {
-        //   id: 11, roomname: 'consequat', price: 89, numberOfBedrooms: 5, rating: 1, numberOfReviews: 482, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF8ODMs1mKu5T6ZNQYIyr4gXDfXhoHjgpQFL30Z_0a0Omq8VQ4', roomType: 'Entire House', instantBook: 'F',
-        // },
-        // {
-        //   id: 12, roomname: 'tempus torquent praesent', price: 679, numberOfBedrooms: 1, rating: 3, numberOfReviews: 440, urlToImage: 'https://doormandesigns.com/wp-content/uploads/2016/10/alex-gernier-apartment-therapy-doorman-designs-2.jpg', roomType: 'Entire House', instantBook: 'T',
-        // },
+        {
+          id: 7, roomname: 'pharetra congue', price: 348, numberOfBedrooms: 3, rating: 5, numberOfReviews: 211, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Xujs-rutVHuP9psB4eq_46RVcgQmVHS9O8RH9XciUK8hVC6d', roomType: 'Entire Guest Suite', instantBook: 'T',
+        },
+        {
+          id: 8, roomname: 'class', price: 594, numberOfBedrooms: 4, rating: 2, numberOfReviews: 212, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_843qjUkImjm7CdlS7HUZft8gaiwmZtnuxBamCXNCctDbtGrJcA', roomType: 'Entire Guest House', instantBook: 'F',
+        },
+        {
+          id: 9, roomname: 'volutpat aptent iaculis', price: 180, numberOfBedrooms: 7, rating: 1, numberOfReviews: 358, urlToImage: 'https://i.pinimg.com/originals/66/ed/a1/66eda146d5b35c52abeae178a1b82958.jpg', roomType: 'Private Room', instantBook: 'F',
+        },
+        {
+          id: 10, roomname: 'pulvinar lacus accumsan', price: 480, numberOfBedrooms: 4, rating: 3, numberOfReviews: 201, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO3P3FqmwF9RiGE6wZvnm47yNW0Y3zKZ_7jfRvomHA9m9KIdXS', roomType: 'Shared Room', instantBook: 'T',
+        },
+        {
+          id: 11, roomname: 'consequat', price: 89, numberOfBedrooms: 5, rating: 1, numberOfReviews: 482, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF8ODMs1mKu5T6ZNQYIyr4gXDfXhoHjgpQFL30Z_0a0Omq8VQ4', roomType: 'Entire House', instantBook: 'F',
+        },
+        {
+          id: 12, roomname: 'tempus torquent praesent', price: 679, numberOfBedrooms: 1, rating: 3, numberOfReviews: 440, urlToImage: 'https://doormandesigns.com/wp-content/uploads/2016/10/alex-gernier-apartment-therapy-doorman-designs-2.jpg', roomType: 'Entire House', instantBook: 'T',
+        },
       ],
       displayedRooms:
       [
@@ -77,24 +77,24 @@ class App extends React.Component {
         {
           id: 6, roomname: 'ac cras', price: 136, numberOfBedrooms: 7, rating: 3, numberOfReviews: 201, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KkjsLHboprlM-Etmob75zdCRhtXbHGop2FQ9ldNxjXRn8-pN8g', roomType: 'Entire Apartment', instantBook: 'F',
         },
-        // {
-        //   id: 7, roomname: 'pharetra congue', price: 348, numberOfBedrooms: 3, rating: 5, numberOfReviews: 211, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Xujs-rutVHuP9psB4eq_46RVcgQmVHS9O8RH9XciUK8hVC6d', roomType: 'Entire Guest Suite', instantBook: 'T',
-        // },
-        // {
-        //   id: 8, roomname: 'class', price: 594, numberOfBedrooms: 4, rating: 2, numberOfReviews: 212, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_843qjUkImjm7CdlS7HUZft8gaiwmZtnuxBamCXNCctDbtGrJcA', roomType: 'Entire Guest House', instantBook: 'F',
-        // },
-        // {
-        //   id: 9, roomname: 'volutpat aptent iaculis', price: 180, numberOfBedrooms: 7, rating: 1, numberOfReviews: 358, urlToImage: 'https://i.pinimg.com/originals/66/ed/a1/66eda146d5b35c52abeae178a1b82958.jpg', roomType: 'Private Room', instantBook: 'F',
-        // },
-        // {
-        //   id: 10, roomname: 'pulvinar lacus accumsan', price: 480, numberOfBedrooms: 4, rating: 3, numberOfReviews: 201, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO3P3FqmwF9RiGE6wZvnm47yNW0Y3zKZ_7jfRvomHA9m9KIdXS', roomType: 'Shared Room', instantBook: 'T',
-        // },
-        // {
-        //   id: 11, roomname: 'consequat', price: 89, numberOfBedrooms: 5, rating: 1, numberOfReviews: 482, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF8ODMs1mKu5T6ZNQYIyr4gXDfXhoHjgpQFL30Z_0a0Omq8VQ4', roomType: 'Entire House', instantBook: 'F',
-        // },
-        // {
-        //   id: 12, roomname: 'tempus torquent praesent', price: 679, numberOfBedrooms: 1, rating: 3, numberOfReviews: 440, urlToImage: 'https://doormandesigns.com/wp-content/uploads/2016/10/alex-gernier-apartment-therapy-doorman-designs-2.jpg', roomType: 'Entire House', instantBook: 'T',
-        // },
+        {
+          id: 7, roomname: 'pharetra congue', price: 348, numberOfBedrooms: 3, rating: 5, numberOfReviews: 211, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Xujs-rutVHuP9psB4eq_46RVcgQmVHS9O8RH9XciUK8hVC6d', roomType: 'Entire Guest Suite', instantBook: 'T',
+        },
+        {
+          id: 8, roomname: 'class', price: 594, numberOfBedrooms: 4, rating: 2, numberOfReviews: 212, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_843qjUkImjm7CdlS7HUZft8gaiwmZtnuxBamCXNCctDbtGrJcA', roomType: 'Entire Guest House', instantBook: 'F',
+        },
+        {
+          id: 9, roomname: 'volutpat aptent iaculis', price: 180, numberOfBedrooms: 7, rating: 1, numberOfReviews: 358, urlToImage: 'https://i.pinimg.com/originals/66/ed/a1/66eda146d5b35c52abeae178a1b82958.jpg', roomType: 'Private Room', instantBook: 'F',
+        },
+        {
+          id: 10, roomname: 'pulvinar lacus accumsan', price: 480, numberOfBedrooms: 4, rating: 3, numberOfReviews: 201, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO3P3FqmwF9RiGE6wZvnm47yNW0Y3zKZ_7jfRvomHA9m9KIdXS', roomType: 'Shared Room', instantBook: 'T',
+        },
+        {
+          id: 11, roomname: 'consequat', price: 89, numberOfBedrooms: 5, rating: 1, numberOfReviews: 482, urlToImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF8ODMs1mKu5T6ZNQYIyr4gXDfXhoHjgpQFL30Z_0a0Omq8VQ4', roomType: 'Entire House', instantBook: 'F',
+        },
+        {
+          id: 12, roomname: 'tempus torquent praesent', price: 679, numberOfBedrooms: 1, rating: 3, numberOfReviews: 440, urlToImage: 'https://doormandesigns.com/wp-content/uploads/2016/10/alex-gernier-apartment-therapy-doorman-designs-2.jpg', roomType: 'Entire House', instantBook: 'T',
+        },
       ],
       allImages: [
         {
@@ -161,11 +161,21 @@ class App extends React.Component {
 
   // =======WILL UNCOMMENT BELOW LATER---USING MOCK DATA DURING DEVELOPMENT======
 
-  // componentDidMount() {
-  //   this.fetch('/getRooms', 'allRooms');
-  //   this.fetch('/getImages', 'allImages');
-  //   this.setDisplayedRooms(this.state.allRooms);
-  // }
+  componentDidMount() {
+    this.fetch('/getRooms', 'allRooms');
+    this.fetch('/getImages', 'allImages');
+    this.setDisplayedRooms(this.state.allRooms);
+  }
+
+  fetch(endpoint, key) {
+    axios.get(endpoint)
+      .then((response) => {
+        this.setState({ [key]: response.data });
+      })
+      .catch((err) => {
+        throw err;
+      });
+  }
 
   setDisplayedRooms(rooms) {
     if (rooms.length > 24) {
@@ -174,16 +184,6 @@ class App extends React.Component {
       this.setState({ displayedRooms: rooms });
     }
   }
-
-  // fetch(endpoint, key) {
-  //   axios.get(endpoint)
-  //     .then((response) => {
-  //       this.setState({ [key]: response.data });
-  //     })
-  //     .catch((err) => {
-  //       throw err;
-  //     });
-  // }
 
   // Helper function for PriceSlider Component
   onSliderChange(value) {
@@ -288,17 +288,17 @@ class App extends React.Component {
   }
 
   // Helper function for Carousel Component
-  previousSlide() {
+  previousSlide(numberOfEntriesInCarousel) {
     if (this.state.activeIndex > 0) {
       this.setState({ activeIndex: this.state.activeIndex - 1 });
     } else {
-      this.setState({ activeIndex: 3 });
+      this.setState({ activeIndex: numberOfEntriesInCarousel - 3 });
     }
   }
 
   // Helper function for Carousel Component
-  nextSlide() {
-    if (this.state.activeIndex < 3) {
+  nextSlide(numberOfEntriesInCarousel) {
+    if (this.state.activeIndex < numberOfEntriesInCarousel - 3) {
       this.setState({ activeIndex: this.state.activeIndex + 1 });
     } else {
       this.setState({ activeIndex: 0 });
