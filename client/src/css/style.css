@@ -210,17 +210,16 @@ body {
 }
 
 .modal-dialog-div {
-    position: relative;
-    outline: 0;
-    /* width: 500px;
-    height: 400px; */
-    display: inline-block;
-    vertical-align: middle;
-    box-sizing: border-box;
-    max-width: auto;
-    border-radius: 4px;
-    background-color: white;
-
+  position: relative;
+  outline: 0;
+  /* width: 500px;
+  height: 400px; */
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  max-width: auto;
+  border-radius: 4px;
+  background-color: white;
 }
 
 #slider-content {

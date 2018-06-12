@@ -3,14 +3,10 @@ import ImageGallery from 'react-image-gallery';
 import PropTypes from 'prop-types';
 
 function ImageCarousel(props) {
-  const images = [
-    {
-      original: props.url,
-    },
-    {
-      original: 'https://cdn.shopify.com/s/files/1/1422/8040/articles/living_720x720.jpeg?v=1487855775',
-    },
-  ];
+  const images = [];
+  props.roomImages.forEach((url) => {
+    images.push({ original: url });
+  });
 
   return (
     <ImageGallery

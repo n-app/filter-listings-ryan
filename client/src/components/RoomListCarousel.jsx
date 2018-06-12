@@ -7,6 +7,21 @@ function RoomListCarousel(props) {
   const halfLength = Math.ceil(props.displayedRooms.length / 2);
   const firstHalf = props.displayedRooms.slice(0, halfLength);
   const secondHalf = props.displayedRooms.slice(halfLength, props.displayedRooms.length);
+
+  const roomImages = {};
+  props.displayedRooms.forEach((room) => {
+    roomImages[room.id] = [];
+  });
+
+  props.allImages.forEach((image) => {
+    if (roomImages.hasOwnProperty(image.roomId)) {
+      console.log('pushed');
+      roomImages[image.roomId].push(image.urlToImage);
+    } else {
+      console.log('failed');
+    }
+  });
+
   return (
     <div className="carousel-content">
       <RoomListCarouselArrow
@@ -17,11 +32,11 @@ function RoomListCarousel(props) {
 
       <div id="carousel">
         <div id="room-carousel">
-          {firstHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} />)}
+          {firstHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} roomImages={roomImages} />)}
         </div>
 
         <div id="room-carousel">
-          {secondHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} />)}
+          {secondHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} roomImages={roomImages} />)}
         </div>
       </div>
 
@@ -39,6 +54,7 @@ RoomListCarousel.propTypes = {
   previousSlide: PropTypes.func.isRequired,
   nextSlide: PropTypes.func.isRequired,
   activeIndex: PropTypes.number.isRequired,
+  allImages: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default RoomListCarousel;
