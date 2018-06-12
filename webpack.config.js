@@ -6,11 +6,11 @@ const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
-  entry: { main: `${SRC_DIR}/index.jsx` },
+  entry: { filterListings: `${SRC_DIR}/index.jsx` },
   resolve: { extensions: ['.js', '.jsx'] },
   output: {
     path: DIST_DIR,
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
   module: {
     rules: [

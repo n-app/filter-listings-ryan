@@ -161,28 +161,24 @@ class App extends React.Component {
 
   // =======WILL UNCOMMENT BELOW LATER---USING MOCK DATA DURING DEVELOPMENT======
 
-  componentDidMount() {
-    this.fetch('/getRooms', 'allRooms');
-    this.fetch('/getImages', 'allImages');
-    this.setDisplayedRooms(this.state.allRooms);
-  }
+  // componentDidMount() {
+  //   this.fetch('/getRooms', 'allRooms');
+  //   this.fetch('/getImages', 'allImages');
+  //   this.setDisplayedRooms(this.state.allRooms);
+  // }
 
-  fetch(endpoint, key) {
-    axios.get(endpoint)
-      .then((response) => {
-        this.setState({ [key]: response.data });
-      })
-      .catch((err) => {
-        throw err;
-      });
-  }
+  // fetch(endpoint, key) {
+  //   axios.get(endpoint)
+  //     .then((response) => {
+  //       this.setState({ [key]: response.data });
+  //     })
+  //     .catch((err) => {
+  //       throw err;
+  //     });
+  // }
 
   setDisplayedRooms(rooms) {
-    if (rooms.length > 24) {
-      this.setState({ displayedRooms: rooms.slice(0, 25) });
-    } else {
-      this.setState({ displayedRooms: rooms });
-    }
+    this.setState({ displayedRooms: rooms.slice(0, 25) });
   }
 
   // Helper function for PriceSlider Component
@@ -354,13 +350,14 @@ class App extends React.Component {
     }
 
     // Rendering conditions for Home Type Button
-    if (this.state.isOpen === true && this.state.currentModalDisplay === HomeTypeSelector) {
-      if (this.state.roomTypeIsSelected === false) {
-        var homeTypeButtonDisplay = 'filter-on-btn';
-        var homeTypeButtonText = 'Home Type';
-      }
-    }
-    if (this.state.roomTypeIsSelected === true) {
+    if (
+      this.state.isOpen === true
+      && this.state.currentModalDisplay === HomeTypeSelector
+      && this.state.roomTypeIsSelected === false
+    ) {
+      var homeTypeButtonDisplay = 'filter-on-btn';
+      var homeTypeButtonText = 'Home Type';
+    } else if (this.state.roomTypeIsSelected === true) {
       var roomTypes = {
         entirePlace: 'Entire Place', 
         privateRoom: 'Private Room',
