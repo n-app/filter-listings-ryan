@@ -4,6 +4,8 @@ import RoomListEntry from './RoomListEntry';
 import RoomListCarouselArrow from './RoomListCarouselArrow';
 
 function RoomListCarousel(props) {
+
+  const displayTwoRows = (props.displayedRooms.length >= 12);
   const halfLength = Math.ceil(props.displayedRooms.length / 2);
   const firstHalf = props.displayedRooms.slice(0, halfLength);
   const secondHalf = props.displayedRooms.slice(halfLength, props.displayedRooms.length);
@@ -15,10 +17,7 @@ function RoomListCarousel(props) {
 
   props.allImages.forEach((image) => {
     if (roomImages.hasOwnProperty(image.roomId)) {
-      console.log('pushed');
       roomImages[image.roomId].push(image.urlToImage);
-    } else {
-      console.log('failed');
     }
   });
 
@@ -30,15 +29,25 @@ function RoomListCarousel(props) {
         arrow={<path d="m 13.7 16.29 a 1 1 0 1 1 -1.42 1.41 l -8 -8 a 1 1 0 0 1 0 -1.41 l 8 -8 a 1 1 0 1 1 1.42 1.41 l -7.29 7.29 Z" />}
       />
 
-      <div id="carousel">
-        <div id="room-carousel">
-          {firstHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} roomImages={roomImages} />)}
-        </div>
+      {displayTwoRows ? (
+        <div id="carousel">
+          <div id="room-carousel">
+            {firstHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} roomImages={roomImages} />)}
+          </div>
 
-        <div id="room-carousel">
-          {secondHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} roomImages={roomImages} />)}
+  
+          <div id="room-carousel">
+            {secondHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} roomImages={roomImages} />)}
+          </div>
         </div>
-      </div>
+      )
+      : (
+        <div id="carousel">
+          <div id="room-carousel">
+            {props.displayedRooms.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} roomImages={roomImages} />)}
+          </div>
+        </div>
+      )}
 
       <RoomListCarouselArrow
         direction="right"

@@ -21,7 +21,7 @@ function ImageCarousel(props) {
 
 
 ImageCarousel.propTypes = {
-  url: PropTypes.string.isRequired,
+  roomImages: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 

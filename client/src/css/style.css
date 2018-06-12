@@ -62,12 +62,12 @@ body {
   width: 90%;
   padding-top:25px;
   margin:0 auto;
-  height:585px;
+  /* height:590px; */
   display:flex;
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items: flex-start;
   align-content: center;
 
 }
@@ -83,20 +83,27 @@ body {
 .left {
   text-align: center;
   fill:rgb(118, 118, 118);
-  display:block;
+  display:flex;
   height:24px;
   box-sizing: border-box;
   width:24px;
-  align-content: center;
+  
+  
+}
+
+.flex-center{
+  display: flex;
+  align-self: center;
 }
 
 .right {
   text-align: center;
   fill:rgb(118, 118, 118);
-  display:block;
+  display:flex;
   height:24px;
   width:24px;
   box-sizing: border-box;
+  
 }
 
 .center {
