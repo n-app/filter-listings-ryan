@@ -394,22 +394,27 @@ class App extends React.Component {
       var instantBookButtonDisplay = 'main-btn';
     }
 
-
     return (
-      <div>
-        <div className="menu">
-          <span className="btn-spacer">
-            <button className={priceButtonDisplay} id="price-btn" onClick={() => this.toggleModal(PriceSlider)}>{priceButtonText}</button>
-          </span>
-          <span className="btn-spacer">
-            <button className={bedroomsButtonDisplay} id="bedrooms-btn" onClick={() => this.toggleModal(BedroomsCounter)}>{bedroomsButtonText}</button>
-          </span>
-          <span className="btn-spacer">
-            <button className={homeTypeButtonDisplay} id="home-type-btn" onClick={() => this.toggleModal(HomeTypeSelector)}>{homeTypeButtonText}</button>
-          </span>
-          <span className="btn-spacer">
-            <button className={instantBookButtonDisplay} id="instant-book-btn" onClick={() => this.toggleModal(InstantBookSelector)}>Instant Book</button>
-          </span>
+      <div> 
+        <div id="menu-border">
+          <div id="filter-listing-title">
+              <span>Filter Listings</span>
+          </div>
+
+          <div className="menu">
+            <span className="btn-spacer">
+              <button className={priceButtonDisplay} id="price-btn" onClick={() => this.toggleModal(PriceSlider)}>{priceButtonText}</button>
+            </span>
+            <span className="btn-spacer">
+              <button className={bedroomsButtonDisplay} id="bedrooms-btn" onClick={() => this.toggleModal(BedroomsCounter)}>{bedroomsButtonText}</button>
+            </span>
+            <span className="btn-spacer">
+              <button className={homeTypeButtonDisplay} id="home-type-btn" onClick={() => this.toggleModal(HomeTypeSelector)}>{homeTypeButtonText}</button>
+            </span>
+            <span className="btn-spacer">
+              <button className={instantBookButtonDisplay} id="instant-book-btn" onClick={() => this.toggleModal(InstantBookSelector)}>Instant Book</button>
+            </span>
+          </div>
         </div>
 
         <Modal
