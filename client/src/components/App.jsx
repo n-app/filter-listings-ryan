@@ -162,8 +162,8 @@ class App extends React.Component {
   // =======WILL UNCOMMENT BELOW LATER---USING MOCK DATA DURING DEVELOPMENT======
 
   componentDidMount() {
-    this.fetch('/getRooms', 'allRooms');
-    this.fetch('/getImages', 'allImages');
+    this.fetch('/filterListings/getRooms', 'allRooms');
+    this.fetch('/filterListings/getImages', 'allImages');
     this.setDisplayedRooms(this.state.allRooms);
   }
 
