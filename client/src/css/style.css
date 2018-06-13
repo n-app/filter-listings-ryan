@@ -62,14 +62,13 @@ body {
   width: 90%;
   padding-top:25px;
   margin:0 auto;
-  /* height:590px; */
+  /* height:585px; */
   display:flex;
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: nowrap;
   align-items: flex-start;
   align-content: center;
-
 }
 
 #carousel {
@@ -83,11 +82,12 @@ body {
 .left {
   text-align: center;
   fill:rgb(118, 118, 118);
-  display:flex;
+  display:block;
   height:24px;
   box-sizing: border-box;
   width:24px;
-}
+  align-content: center
+  }
 
 .flex-center{
   display: flex;
@@ -97,12 +97,12 @@ body {
 .right {
   text-align: center;
   fill:rgb(118, 118, 118);
-  display:flex;
+  display:block;
   height:24px;
   width:24px;
   box-sizing: border-box;
-  
-}
+  align-content: center
+  }
 
 .center {
   text-align: center;

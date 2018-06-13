@@ -161,21 +161,21 @@ class App extends React.Component {
 
   // =======WILL UNCOMMENT BELOW LATER---USING MOCK DATA DURING DEVELOPMENT======
 
-  // componentDidMount() {
-  //   this.fetch('/getRooms', 'allRooms');
-  //   this.fetch('/getImages', 'allImages');
-  //   this.setDisplayedRooms(this.state.allRooms);
-  // }
+  componentDidMount() {
+    this.fetch('/getRooms', 'allRooms');
+    this.fetch('/getImages', 'allImages');
+    this.setDisplayedRooms(this.state.allRooms);
+  }
 
-  // fetch(endpoint, key) {
-  //   axios.get(endpoint)
-  //     .then((response) => {
-  //       this.setState({ [key]: response.data });
-  //     })
-  //     .catch((err) => {
-  //       throw err;
-  //     });
-  // }
+  fetch(endpoint, key) {
+    axios.get(endpoint)
+      .then((response) => {
+        this.setState({ [key]: response.data });
+      })
+      .catch((err) => {
+        throw err;
+      });
+  }
 
   setDisplayedRooms(rooms) {
     this.setState({ displayedRooms: rooms.slice(0, 25) });
