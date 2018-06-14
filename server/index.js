@@ -27,10 +27,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/filterListings/getRooms', (req, res) => {
+app.get('/getRooms', (req, res) => {
   db.getAllRoomlistRecords(res.send.bind(res));
 });
 
-app.get('/filterListings/getImages', (req, res) => {
+app.get('/getImages', (req, res) => {
   db.getAllImagesRecords(res.send.bind(res));
 });
