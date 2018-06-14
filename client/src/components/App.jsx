@@ -417,25 +417,28 @@ class App extends React.Component {
           </div>
         </div>
 
-        <Modal
-          show={this.state.isOpen}
-          priceLimits={this.state.priceLimits}
-          onSliderChange={this.onSliderChange}
-          bedMin={this.state.bedMin}
-          decreaseBedCount={this.decreaseBedCount}
-          increaseBedCount={this.increaseBedCount}
-          applyFilters={this.applyFilters}
-          clearFilter={this.clearFilter}
-          toggleModal={this.toggleModal}
-          currentModalDisplay={this.state.currentModalDisplay}
-          preventClose={App.preventClose}
-          toggleHomeType={this.toggleHomeType}
-          entirePlace={this.state.entirePlace}
-          privateRoom={this.state.privateRoom}
-          sharedRoom={this.state.sharedRoom}
-          instantBook={this.state.instantBook}
-          toggleInstantBook={this.toggleInstantBook}
-        />
+        <div id="modal-container">
+          <Modal
+            show={this.state.isOpen}
+            priceLimits={this.state.priceLimits}
+            onSliderChange={this.onSliderChange}
+            bedMin={this.state.bedMin}
+            decreaseBedCount={this.decreaseBedCount}
+            increaseBedCount={this.increaseBedCount}
+            applyFilters={this.applyFilters}
+            clearFilter={this.clearFilter}
+            toggleModal={this.toggleModal}
+            currentModalDisplay={this.state.currentModalDisplay}
+            preventClose={App.preventClose}
+            toggleHomeType={this.toggleHomeType}
+            entirePlace={this.state.entirePlace}
+            privateRoom={this.state.privateRoom}
+            sharedRoom={this.state.sharedRoom}
+            instantBook={this.state.instantBook}
+            toggleInstantBook={this.toggleInstantBook}
+          />
+        </div>
+      
 
         <div className="content">
           <RoomListCarousel
