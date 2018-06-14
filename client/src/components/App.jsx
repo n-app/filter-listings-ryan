@@ -440,7 +440,6 @@ class App extends React.Component {
           />
         </div>
       
-
         <div className="content">
           <RoomListCarousel
             activeIndex={this.state.activeIndex}
