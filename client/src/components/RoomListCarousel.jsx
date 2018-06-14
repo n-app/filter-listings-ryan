@@ -21,41 +21,43 @@ function RoomListCarousel(props) {
   });
 
   return (
-    <div className="carousel-content">
-      <RoomListCarouselArrow
-        direction="left"
-        clickFunction={props.previousSlide}
-        numberOfEntriesInCarousel={displayTwoRows ? halfLength : props.displayedRooms.length}
-        arrow={<path d="m 13.7 16.29 a 1 1 0 1 1 -1.42 1.41 l -8 -8 a 1 1 0 0 1 0 -1.41 l 8 -8 a 1 1 0 1 1 1.42 1.41 l -7.29 7.29 Z" />}
-      />
-
-      {displayTwoRows ? (
-        <div id="carousel">
-          <div id="room-carousel">
-            {firstHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} roomImages={roomImages} />)}
-          </div>
-
   
-          <div id="room-carousel">
-            {secondHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} roomImages={roomImages} />)}
-          </div>
-        </div>
-      )
-      : (
-        <div id="carousel">
-          <div id="room-carousel">
-            {props.displayedRooms.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} roomImages={roomImages} />)}
-          </div>
-        </div>
-      )}
+      <div className="carousel-content">
+        <RoomListCarouselArrow
+          direction="left"
+          clickFunction={props.previousSlide}
+          numberOfEntriesInCarousel={displayTwoRows ? halfLength : props.displayedRooms.length}
+          arrow={<path d="m 13.7 16.29 a 1 1 0 1 1 -1.42 1.41 l -8 -8 a 1 1 0 0 1 0 -1.41 l 8 -8 a 1 1 0 1 1 1.42 1.41 l -7.29 7.29 Z" />}
+        />
 
-      <RoomListCarouselArrow
-        direction="right"
-        clickFunction={props.nextSlide}
-        numberOfEntriesInCarousel={displayTwoRows ? halfLength : props.displayedRooms.length}
-        arrow={<path d="m 4.29 1.71 a 1 1 0 1 1 1.42 -1.41 l 8 8 a 1 1 0 0 1 0 1.41 l -8 8 a 1 1 0 1 1 -1.42 -1.41 l 7.29 -7.29 Z" />}
-      />
-    </div>
+        {displayTwoRows ? (
+          <div id="carousel">
+            <div id="room-carousel">
+              {firstHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} roomImages={roomImages} />)}
+            </div>
+
+    
+            <div id="room-carousel">
+              {secondHalf.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} roomImages={roomImages} />)}
+            </div>
+          </div>
+        )
+        : (
+          <div id="carousel">
+            <div id="room-carousel">
+              {props.displayedRooms.map((room, index) => <RoomListEntry key={index} room={room} activeIndex={props.activeIndex} roomImages={roomImages} />)}
+            </div>
+          </div>
+        )}
+
+        <RoomListCarouselArrow
+          direction="right"
+          clickFunction={props.nextSlide}
+          numberOfEntriesInCarousel={displayTwoRows ? halfLength : props.displayedRooms.length}
+          arrow={<path d="m 4.29 1.71 a 1 1 0 1 1 1.42 -1.41 l 8 8 a 1 1 0 0 1 0 1.41 l -8 8 a 1 1 0 1 1 -1.42 -1.41 l 7.29 -7.29 Z" />}
+        />
+      </div>
+
   );
 }
 
