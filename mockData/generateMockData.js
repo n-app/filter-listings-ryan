@@ -13,7 +13,10 @@ const getNumberForAllEntries = (min, max, numberOfEntries) => {
 const getRoomPicUrl = (numberOfEntries) => {
   const allUrls = [];
   for (let i = 0; i < numberOfEntries; i++) {
-    allUrls.push(`https://s3.us-east-2.amazonaws.com/airbnb-clone-pics/room-pic_${i}.jpg`);
+    for (let j = 0; j < 6; j++) {
+      const houseNumber = 1000 + i;
+      allUrls.push(`https://s3-us-west-1.amazonaws.com/napbnb/${houseNumber}home${j}.jpg`);
+    }
   }
   return allUrls;
 };
@@ -62,15 +65,15 @@ const getWordsForAllEntries = (words, numberOfEntries, maxNumberOfWordsInOutput)
   return allWords;
 };
 
-const allRoomNames = getWordsForAllEntries(loremIpsum, 200, 3);
-const allPrices = getNumberForAllEntries(50, 750, 200);
-const allNumberOfRooms = getNumberForAllEntries(1, 7, 200);
-const allRatings = getNumberForAllEntries(1, 5, 200);
-const allNumberOfReviews = getNumberForAllEntries(0, 500, 200);
-const allRoomTypes = getWordsForAllEntries(roomTypes, 200, 1);
-const allInstantBooks = getWordsForAllEntries(trueFalse, 200, 1);
+const allRoomNames = getWordsForAllEntries(loremIpsum, 20, 3);
+const allPrices = getNumberForAllEntries(50, 750, 20);
+const allNumberOfRooms = getNumberForAllEntries(1, 7, 20);
+const allRatings = getNumberForAllEntries(1, 5, 20);
+const allNumberOfReviews = getNumberForAllEntries(0, 500, 20);
+const allRoomTypes = getWordsForAllEntries(roomTypes, 20, 1);
+const allInstantBooks = getWordsForAllEntries(trueFalse, 20, 1);
 
-const allUrls = getRoomPicUrl(600);
+const allUrls = getRoomPicUrl(20);
 
 const columnData = [
   allRoomNames,
@@ -110,7 +113,7 @@ const createImagesRecords = (numberOfEntries, numberOfPicturesPerListing, urls) 
 };
 
 const allRoomlistRecords = createRoomlistRecords(columnData);
-const allImagesRecords = createImagesRecords(200, 3, allUrls);
+const allImagesRecords = createImagesRecords(20, 6, allUrls);
 
 db.insertRoomlistRecords(allRoomlistRecords);
 db.insertImagesRecords(allImagesRecords);
