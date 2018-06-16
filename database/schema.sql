@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS rooms;
+DROP DATABASE IF EXISTS mysql_n_app_filter_listings;
 
-CREATE DATABASE rooms;
+CREATE DATABASE mysql_n_app_filter_listings;
 
-USE rooms;
+USE  mysql_n_app_filter_listings; 
 
 DROP TABLE IF EXISTS roomlist;
 

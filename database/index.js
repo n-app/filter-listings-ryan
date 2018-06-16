@@ -1,9 +1,11 @@
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'rooms',
+  host: process.env.host || 'localhost',
+  port: process.env.databasePort || '',
+  user: process.env.user || 'root', //'root'
+  password: process.env.password,
+  database: process.env.database || 'mysql_n_app_filter_listings', //'rooms'
 });
 
 connection.connect((err) => {

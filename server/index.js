@@ -3,11 +3,11 @@ const db = require('../database/index.js');
 const path = require('path');
 
 const app = express();
-const port = 3004;
+const port = process.env.serverPort || 3004;
 
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
-app.listen(3004, () => {
+app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
 
