@@ -13,8 +13,7 @@
   },
   "scripts": {
     "dev": "webpack -d --watch",
-    "start": "node server/index.js",
-    "test": "jest"
+    "start": "node server/index.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -43,10 +42,7 @@
     "eslint-plugin-react": "^7.8.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "jest": "^23.1.0",
     "mini-css-extract-plugin": "^0.4.0",
-    "nodemon": "^1.17.5",
-    "puppeteer": "^1.4.0",
     "webpack": "^4.10.2",
     "webpack-cli": "^2.1.5"
   }
