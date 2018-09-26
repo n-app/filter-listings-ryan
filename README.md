@@ -1,13 +1,16 @@
 # Project Name
 
 > Project description
+N-App Room Reservations Web Application
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/n-app/booking-service
+  - https://github.com/n-app/N-appbnb-description-listing
+  - https://github.com/n-app/reviews
+  - https://github.com/n-app/titleGallery
+  - https://github.com/n-app/booking-service
+  - https://github.com/n-app/proxy_Ryan
 
 ## Table of Contents
 
