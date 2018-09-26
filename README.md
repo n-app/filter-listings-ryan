@@ -1,7 +1,6 @@
 # Project Name
 
-> Project description
-N-App Room Reservations Web Application
+> N-App Room Reservations Web Application
 
 ## Related Projects
 
