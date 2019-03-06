@@ -44,4 +44,5 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
+![filter-listings-gif](https://user-images.githubusercontent.com/37486321/53919604-5d994380-401f-11e9-8879-a412e6c08f0f.gif)
 
