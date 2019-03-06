@@ -45,4 +45,4 @@ npm install -g webpack
 npm install
 ```
 ![filter-listings-gif](https://user-images.githubusercontent.com/37486321/53919604-5d994380-401f-11e9-8879-a412e6c08f0f.gif)
-
+![filter-listings-screenshot](https://user-images.githubusercontent.com/37486321/53919802-f16b0f80-401f-11e9-8313-176e885a1ff1.png)
